@@ -1,0 +1,17 @@
+@mixin font($ff, $ff2, $fz, $fs, $fw, $lh, $clr) {
+    font-family: $ff, $ff2;
+    font-size: $fz;
+    font-style: $fs;
+    font-weight: $fw;
+    line-height: $lh;
+    color: $clr;
+}
+
+@mixin flex($flex, $jc, $alit) {
+    flex: $flex;
+    justify-content: $jc;
+    align-items: $alit;
+}
+
+$clr1 :linear-gradient(113.02deg, #5C037F 43.75%, #BE0DAF 100%) ;
+$clr2 : #352e71;

@@ -1,0 +1,23 @@
+.main {
+    display: block;
+    width: 100%;
+    min-height: 100vh;
+    
+    background: $clr1;
+    // .main__flex
+
+    &__flex {
+        @include flex(1 1 50%, space-around, center);
+        max-width: 100%;
+    }
+
+    // .main__content
+
+    &__content {
+    }
+
+    // .main__img
+
+    &__img {
+    }
+}
