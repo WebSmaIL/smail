@@ -1,10 +1,23 @@
+// Обнуление стилей
 @import "./modules/nullstyle";
+
+// Добавление миксинов переменных и т.д
 @import "./modules/elements";
 
 
+// Общие стили
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: #000;
+}
+
 .container {
     width: 100%;
-    padding: 20px 40px;
+    margin: 20px auto;
 }
 
 .title {
@@ -24,19 +37,87 @@
     display: block;
     width: 100%;
     min-height: 100vh;
-    
-    background: $clr1;
+    padding: 200px;
+
     // .main__flex
 
     &__flex {
         @include flex(1 1 50%, space-around, center);
         max-width: 100%;
+        
     }
 
     // .main__content
 
     &__content {
+        max-width: 800px;
+        padding: 20px;
+        background: #fff;
+
+        
+
+        position: relative;
+
+        &:hover {
+            .main__contentBg {
+                width: 99%;
+                height: 98%;
+            }
+
+            .main__text {
+                color: rgb(255, 255, 255);
+            }
+            .main__title {
+                color: rgb(255, 255, 255);
+            }
+            .main__subtitle {
+                color: rgb(255, 255, 255);
+            }
+        }
     }
+
+    &__contentBg {
+        display: block;
+        width: 0%;
+        height: 0%;
+        background: #000;
+        
+        position: absolute;
+        top: 3px;
+        left: 3px;
+
+        z-index: 0;
+
+        transition: all .5s ease;
+    }
+
+    &__text {
+        color: #000;
+        transition: all .5s ease;
+        position: relative;
+        z-index: 1;
+    }
+
+    &__title {
+        color: #000;
+        transition: all .5s ease;
+        position: relative;
+        z-index: 1;
+    }
+
+    &__subtitle {
+        margin-bottom: 20px;
+
+        color: #000;
+        transition: all .5s ease;
+        position: relative;
+        z-index: 1;
+    }
+
+    &__btn {
+        color: #000;
+    }
+
 
     // .main__img
 

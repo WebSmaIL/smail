@@ -56,9 +56,17 @@ select {
   font: inherit;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: #000;
+}
+
 .container {
   width: 100%;
-  padding: 20px 40px;
+  margin: 20px auto;
 }
 
 .title {
@@ -101,8 +109,7 @@ select {
   display: block;
   width: 100%;
   min-height: 100vh;
-  background: -o-linear-gradient(336.98deg, #5C037F 43.75%, #BE0DAF 100%);
-  background: linear-gradient(113.02deg, #5C037F 43.75%, #BE0DAF 100%);
+  padding: 200px;
 }
 .main__flex {
   -webkit-box-flex: 1;
@@ -114,4 +121,64 @@ select {
       -ms-flex-align: center;
           align-items: center;
   max-width: 100%;
+}
+.main__content {
+  max-width: 800px;
+  padding: 20px;
+  background: #fff;
+  position: relative;
+}
+.main__content:hover .main__contentBg {
+  width: 99%;
+  height: 98%;
+}
+.main__content:hover .main__text {
+  color: rgb(255, 255, 255);
+}
+.main__content:hover .main__title {
+  color: rgb(255, 255, 255);
+}
+.main__content:hover .main__subtitle {
+  color: rgb(255, 255, 255);
+}
+.main__contentBg {
+  display: block;
+  width: 0%;
+  height: 0%;
+  background: #000;
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  z-index: 0;
+  -webkit-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+.main__text {
+  color: #000;
+  -webkit-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+  position: relative;
+  z-index: 1;
+}
+.main__title {
+  color: #000;
+  -webkit-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+  position: relative;
+  z-index: 1;
+}
+.main__subtitle {
+  margin-bottom: 20px;
+  color: #000;
+  -webkit-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+  position: relative;
+  z-index: 1;
+}
+.main__btn {
+  color: #000;
 }
