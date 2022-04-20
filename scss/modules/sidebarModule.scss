@@ -1,0 +1,46 @@
+.sidebar {
+    width: 80px;
+    height: 100vh;
+
+    padding: 15px 0;
+
+    background-color: rgb(0, 0, 0);
+    border-right: 3px solid #fff;
+    border-radius: 0 50px 50px 0;
+    backdrop-filter: blur(5px);
+    box-shadow: -5px 0 50px rgba(255, 255, 255, 0.448);
+
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    // .sidebar__logo
+
+    &__logo {
+        margin: 0 10px;
+    }
+
+    // .sidebar__btn
+
+    // &__btn {
+    // }
+
+    // .sidebar__nav
+
+    &__nav {
+        @include flex(1 1 20%, space-around, center);
+        flex-direction: column;
+
+        max-width: 100%;
+    }
+
+    // .sidebar__links
+
+    &__links {
+    }
+
+    // .sidebar__link
+
+    &__link {
+    }
+}

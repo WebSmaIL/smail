@@ -65,8 +65,8 @@ body {
 }
 
 .container {
-  width: 100%;
-  margin: 20px auto;
+  max-width: 1200px;
+  margin: 150px auto;
 }
 
 .title {
@@ -97,21 +97,64 @@ body {
 }
 
 .btn {
+  padding: 10px;
   font-family: "Montserrat", sans-serif;
   font-size: 26px;
   font-style: normal;
   font-weight: 400;
   line-height: 1.5;
   color: rgb(215, 215, 215);
+  text-decoration: none;
+  border: 3px solid #000;
+  background: rgb(0, 0, 0);
 }
 
+.sidebar {
+  width: 80px;
+  height: 100vh;
+  padding: 15px 0;
+  background-color: rgb(0, 0, 0);
+  border-right: 3px solid #fff;
+  border-radius: 0 50px 50px 0;
+  -webkit-backdrop-filter: blur(5px);
+          backdrop-filter: blur(5px);
+  -webkit-box-shadow: -5px 0 50px rgba(255, 255, 255, 0.448);
+          box-shadow: -5px 0 50px rgba(255, 255, 255, 0.448);
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+.sidebar__logo {
+  margin: 0 10px;
+}
+.sidebar__nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 20%;
+          flex: 1 1 20%;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  max-width: 100%;
+}
 .main {
   display: block;
   width: 100%;
   min-height: 100vh;
-  padding: 200px;
+  padding: 30px 30px 30px 80px;
 }
 .main__flex {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   -webkit-box-flex: 1;
       -ms-flex: 1 1 50%;
           flex: 1 1 50%;
@@ -123,62 +166,106 @@ body {
   max-width: 100%;
 }
 .main__content {
-  max-width: 800px;
-  padding: 20px;
-  background: #fff;
+  max-width: 600px;
+}
+.main__titleblock {
+  width: 100%;
+  margin-bottom: 20px;
+  padding: 15px 0;
+  background: rgb(255, 255, 255);
+  border: 5px solid rgb(255, 255, 255);
   position: relative;
 }
-.main__content:hover .main__contentBg {
-  width: 99%;
-  height: 98%;
+.main__titleblock:hover .main__contentBg {
+  width: 50%;
 }
-.main__content:hover .main__text {
-  color: rgb(255, 255, 255);
+.main__titleblock:hover .main__title {
+  color: #fff;
 }
-.main__content:hover .main__title {
-  color: rgb(255, 255, 255);
+.main__titleblock:hover .main__subtitle {
+  color: #fff;
 }
-.main__content:hover .main__subtitle {
+.main__textblock {
+  width: 100%;
+  margin-bottom: 20px;
+  padding: 15px 0 25px 0;
+  background: rgb(255, 255, 255);
+  border: 5px solid rgb(255, 255, 255);
+  position: relative;
+}
+.main__textblock:hover .main__contentBg {
+  width: 50%;
+}
+.main__textblock:hover .main__text {
+  color: #fff;
+}
+.main__textblock:hover .main__btn {
+  background: rgb(255, 255, 255);
+  border-color: rgb(255, 255, 255);
+  color: #000;
+}
+.main__textblock:hover .main__btn:hover {
+  background: rgb(0, 0, 0);
   color: rgb(255, 255, 255);
 }
 .main__contentBg {
   display: block;
   width: 0%;
-  height: 0%;
+  height: 100%;
   background: #000;
   position: absolute;
-  top: 3px;
-  left: 3px;
+  top: 0px;
   z-index: 0;
   -webkit-transition: all 0.5s ease;
   -o-transition: all 0.5s ease;
   transition: all 0.5s ease;
 }
+.main__contentBg:first-child {
+  right: 0px;
+  -webkit-transform: rotate(180deg);
+      -ms-transform: rotate(180deg);
+          transform: rotate(180deg);
+}
+.main__contentBg:last-child {
+  left: 0px;
+}
 .main__text {
+  margin: 15px 15px;
+  margin-bottom: 25px;
   color: #000;
-  -webkit-transition: all 0.5s ease;
-  -o-transition: all 0.5s ease;
-  transition: all 0.5s ease;
+  -webkit-transition: all 0.5s ease 0.5s;
+  -o-transition: all 0.5s ease 0.5s;
+  transition: all 0.5s ease 0.5s;
   position: relative;
   z-index: 1;
 }
 .main__title {
+  margin: 0 15px;
   color: #000;
-  -webkit-transition: all 0.5s ease;
-  -o-transition: all 0.5s ease;
-  transition: all 0.5s ease;
+  -webkit-transition: all 0.5s ease 0.5s;
+  -o-transition: all 0.5s ease 0.5s;
+  transition: all 0.5s ease 0.5s;
   position: relative;
   z-index: 1;
 }
 .main__subtitle {
-  margin-bottom: 20px;
+  margin: 0 15px;
   color: #000;
+  -webkit-transition: all 0.5s ease 0.5s;
+  -o-transition: all 0.5s ease 0.5s;
+  transition: all 0.5s ease 0.5s;
+  position: relative;
+  z-index: 1;
+}
+.main__btn {
+  margin: 0 15px;
+  color: rgb(255, 255, 255);
   -webkit-transition: all 0.5s ease;
   -o-transition: all 0.5s ease;
   transition: all 0.5s ease;
   position: relative;
   z-index: 1;
 }
-.main__btn {
-  color: #000;
+.main__img {
+  margin-left: 20px;
 }

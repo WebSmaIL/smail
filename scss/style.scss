@@ -16,8 +16,8 @@ body {
 }
 
 .container {
-    width: 100%;
-    margin: 20px auto;
+    max-width: 1200px;
+    margin: 150px auto;
 }
 
 .title {
@@ -30,99 +30,19 @@ body {
     @include font('Montserrat', sans-serif, 26px, normal, 400, 1.5, rgb(215, 215, 215))
 }
 .btn {
-    @include font('Montserrat', sans-serif, 26px, normal, 400, 1.5, rgb(215, 215, 215))
+
+    padding: 10px;
+    
+    @include font('Montserrat', sans-serif, 26px, normal, 400, 1.5, rgb(215, 215, 215));
+
+    text-decoration: none;
+    border: 3px solid #000;
+    background: rgb(0, 0, 0);
+
 }
 
-.main {
-    display: block;
-    width: 100%;
-    min-height: 100vh;
-    padding: 200px;
+// import sidebar
+@import "./modules/sidebarModule.scss";
 
-    // .main__flex
-
-    &__flex {
-        @include flex(1 1 50%, space-around, center);
-        max-width: 100%;
-        
-    }
-
-    // .main__content
-
-    &__content {
-        max-width: 800px;
-        padding: 20px;
-        background: #fff;
-
-        
-
-        position: relative;
-
-        &:hover {
-            .main__contentBg {
-                width: 99%;
-                height: 98%;
-            }
-
-            .main__text {
-                color: rgb(255, 255, 255);
-            }
-            .main__title {
-                color: rgb(255, 255, 255);
-            }
-            .main__subtitle {
-                color: rgb(255, 255, 255);
-            }
-        }
-    }
-
-    &__contentBg {
-        display: block;
-        width: 0%;
-        height: 0%;
-        background: #000;
-        
-        position: absolute;
-        top: 3px;
-        left: 3px;
-
-        z-index: 0;
-
-        transition: all .5s ease;
-    }
-
-    &__text {
-        color: #000;
-        transition: all .5s ease;
-        position: relative;
-        z-index: 1;
-    }
-
-    &__title {
-        color: #000;
-        transition: all .5s ease;
-        position: relative;
-        z-index: 1;
-    }
-
-    &__subtitle {
-        margin-bottom: 20px;
-
-        color: #000;
-        transition: all .5s ease;
-        position: relative;
-        z-index: 1;
-    }
-
-    &__btn {
-        color: #000;
-    }
-
-
-    // .main__img
-
-    &__img {
-    }
-}
-
-// @import "./modules/mainModule.scss";
+// import main
+@import "./modules/mainModule.scss";

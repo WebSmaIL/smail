@@ -8,6 +8,7 @@
 }
 
 @mixin flex($flex, $jc, $alit) {
+    display: flex;
     flex: $flex;
     justify-content: $jc;
     align-items: $alit;
