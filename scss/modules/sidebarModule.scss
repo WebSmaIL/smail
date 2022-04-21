@@ -1,14 +1,12 @@
 .sidebar {
-    width: 80px;
-    height: 100vh;
+    width: 100%;
+    height: 75px;
 
-    padding: 15px 0;
-
-    background-color: rgb(0, 0, 0);
-    border-right: 3px solid #fff;
-    border-radius: 0 50px 50px 0;
+    background-color: rgba(0, 0, 0, 0.203);
+    border-bottom: 1px solid #fff;
+    border-radius: 0 0 50px 50px;
     backdrop-filter: blur(5px);
-    box-shadow: -5px 0 50px rgba(255, 255, 255, 0.448);
+    box-shadow: 0 -5px 50px rgba(255, 255, 255, 0.448);
 
     position: fixed;
     top: 0;
@@ -18,6 +16,8 @@
 
     &__logo {
         margin: 0 10px;
+        width: 65px;
+        height: 100%;
     }
 
     // .sidebar__btn
@@ -29,18 +29,28 @@
 
     &__nav {
         @include flex(1 1 20%, space-around, center);
-        flex-direction: column;
 
         max-width: 100%;
     }
 
-    // .sidebar__links
-
-    &__links {
-    }
+    
 
     // .sidebar__link
 
     &__link {
+        width: 65px;
+        height: 100%;
+        padding: 15px;
+        margin-left: 10px;
+
+        @include font('Montserrat', sans-serif, 18px, normal, 700, 1.5, rgb(255, 255, 255));
+        text-align: center;
+        text-decoration: none;
+
+        background: rgba(255, 255, 255, 0.14);
+
+        &>img {
+            margin: 0 auto ;
+        }
     }
 }
