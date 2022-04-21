@@ -2,35 +2,42 @@
     width: 100%;
     height: 75px;
 
-    background-color: rgba(0, 0, 0, 0.203);
+    padding: 0 50px;
+
+    background-color: rgba(0, 0, 0, 0.653);
     border-bottom: 1px solid #fff;
-    border-radius: 0 0 50px 50px;
+    border-radius: 0 0 70px 70px;
     backdrop-filter: blur(5px);
-    box-shadow: 0 -5px 50px rgba(255, 255, 255, 0.448);
+    box-shadow: 0 -5px 50px rgba(115, 115, 115, 0.748);
 
     position: fixed;
     top: 0;
     left: 0;
 
+    z-index: 99;
+
+    // .sidebar__flex
+
+    &__flex {
+        @include flex(1 1 50%, space-around, center);
+    }
+
     // .sidebar__logo
 
     &__logo {
-        margin: 0 10px;
+        margin: 5px 10px;
         width: 65px;
         height: 100%;
     }
 
-    // .sidebar__btn
-
-    // &__btn {
-    // }
 
     // .sidebar__nav
 
     &__nav {
         @include flex(1 1 20%, space-around, center);
 
-        max-width: 100%;
+        max-width: 500px;
+        height: 100%;
     }
 
     
@@ -41,16 +48,57 @@
         width: 65px;
         height: 100%;
         padding: 15px;
-        margin-left: 10px;
+        margin-left: 0px;
 
         @include font('Montserrat', sans-serif, 18px, normal, 700, 1.5, rgb(255, 255, 255));
         text-align: center;
         text-decoration: none;
 
-        background: rgba(255, 255, 255, 0.14);
+        position: relative;
+
+        &:first-child {
+            margin-left: 0;
+        }
 
         &>img {
             margin: 0 auto ;
+            transition: all .4s ease;
+        }
+
+        &:hover {
+            &>img {
+                transform: scale(1.3);
+            }   
+        }
+
+        &::after,
+        &::before {
+            content: "";
+            width: 0;
+            height: 5px;
+
+            background: #fff;
+            border-top-right-radius: 10px;
+            border-bottom-right-radius: 10px;
+
+            position: absolute;
+            bottom: 0;
+
+            transition: all .3s ease;
+        }
+        &::before {
+            left: 49%;
+        }
+        &::after {
+            right: 49%;
+            transform: rotate(180deg);
+        }
+
+        &.active::before {
+            width: 50%;        
+        }
+        &.active::after {
+            width: 50%;
         }
     }
 }

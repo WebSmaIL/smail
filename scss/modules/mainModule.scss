@@ -2,19 +2,31 @@
     display: block;
     width: 100%;
     min-height: 100vh;
-    padding: 30px 30px 30px 80px;
+    padding: 200px 30px 0 30px;
+
+    @media (max-width: 1199px) {
+        padding-top: 100px;
+    }
 
     // .main__flex
 
     &__flex {
         @include flex(1 1 50%, space-around, center);
         max-width: 100%;
+
+        @media (max-width: 1199px) {
+            flex-direction: column;
+        }
     }
 
     // .main__content
 
     &__content {
         max-width: 600px;
+
+        @media (max-width: 1199px) {
+            order: 2;
+        }
     }
 
     &__titleblock {
@@ -24,6 +36,10 @@
 
         background: rgb(255, 255, 255);
         border: 5px solid rgb(255, 255, 255);
+
+        @media (max-width: 1199px) {
+            text-align: center;
+        }
 
         position: relative;
 
@@ -51,6 +67,10 @@
         border: 5px solid rgb(255, 255, 255);
 
         position: relative;
+
+        @media (max-width: 1199px) {
+            text-align: center;
+        }
 
         &:hover {
             .main__contentBg {
@@ -102,7 +122,7 @@
 
         color: #000;
 
-        transition: all .5s ease .5s;
+        transition: all .5s ease .3s;
 
         position: relative;
         z-index: 1;
@@ -113,7 +133,7 @@
 
         color: #000;
 
-        transition: all .5s ease .5s;
+        transition: all .5s ease .3s;
 
         position: relative;
         z-index: 1;
@@ -124,7 +144,7 @@
 
         color: #000;
 
-        transition: all .5s ease .5s;
+        transition: all .5s ease .3s;
 
         position: relative;
         z-index: 1;
@@ -146,5 +166,11 @@
 
     &__img {
         margin-left: 20px;
+
+        @media (max-width: 1199px) {
+            order: 1;
+            margin-left: 0;
+            margin-bottom: 30px;
+        }
     }
 }

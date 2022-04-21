@@ -17,17 +17,29 @@ body {
 
 .container {
     max-width: 1200px;
-    margin: 150px auto;
+    margin: 0 auto;
 }
 
 .title {
-    @include font('Montserrat', sans-serif, 42px, normal, 700, 1.5, #fff)
+    @include font('Montserrat', sans-serif, 42px, normal, 700, 1.5, #fff);
+
+    @media (max-width: 767px) {
+        font-size: 34px;
+    }
 }
 .subtitle {
-    @include font('Montserrat', sans-serif, 34px, normal, 400, 1.5, rgb(215, 215, 215))
+    @include font('Montserrat', sans-serif, 34px, normal, 400, 1.5, rgb(215, 215, 215));
+
+    @media (max-width: 767px) {
+        font-size: 24px;
+    }
 }
 .text {
-    @include font('Montserrat', sans-serif, 26px, normal, 400, 1.5, rgb(215, 215, 215))
+    @include font('Montserrat', sans-serif, 26px, normal, 400, 1.5, rgb(215, 215, 215));
+    
+    @media (max-width: 767px) {
+        font-size: 18px;
+    }
 }
 .btn {
 
@@ -39,6 +51,9 @@ body {
     border: 3px solid #000;
     background: rgb(0, 0, 0);
 
+    @media (max-width: 767px) {
+        font-size: 18px;
+    }
 }
 
 // import sidebar
@@ -46,3 +61,6 @@ body {
 
 // import main
 @import "./modules/mainModule.scss";
+
+// import about
+@import "./modules/aboutModule.scss";

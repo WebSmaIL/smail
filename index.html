@@ -13,36 +13,46 @@
 <body>
     <!-- OPEN SIDEBAR -->
         <header class="sidebar">
-            
+
+            <div class="sidebar__flex">
+
                 <div class="sidebar__logo">
                     <img src="./images/WEBSMAIL_LOGO.svg" alt="">
                 </div>
 
                 <nav class="sidebar__nav">
-                    
-                    <a class="sidebar__link" href="#">
-                        <img src="./images/sidebarIcons/Home.svg" alt="">
-                        <!-- <span>Home</span> -->
+
+                    <!-- HOME LINK -->
+                    <a class="sidebar__link active" href="#">
+                        <img src="./images/sidebarIcons/Home.svg" alt=""> 
                     </a>
+
+                    <!-- ABOUT LINK -->
                     <a class="sidebar__link" href="#">
                         <img src="./images/sidebarIcons/about.svg" alt="">
                     </a>
+
+                    <!-- PORTFOLIO LINK -->
                     <a class="sidebar__link" href="#">
                         <img src="./images/sidebarIcons/portfolio.svg" alt="">
                     </a>
+
+                    <!-- PRICE LINK -->
                     <a class="sidebar__link" href="#">
                         <img src="./images/sidebarIcons/price.svg" alt="">
                     </a>
+
+                    <!-- CONTACT LINK -->
                     <a class="sidebar__link" href="#">
                         <img src="./images/sidebarIcons/contact.svg" alt="">
-                    </a>
-                        
+                    </a>   
                 </nav>
-            </header>
+            </div>
+        </header>
     <!-- CLOSE SIDEBAR -->
     
     <!-- OPEN MAIN -->
-        <main class="main">
+        <main id="Home" class="main">
             <div class="container">
                 <div class="main__flex">
 
@@ -76,6 +86,46 @@
             </div>
         </main>
     <!-- CLOSE MAIN -->
+
+    <!-- OPEN ABOUT -->
+        <section id="About" class="about">
+            <div class="container">
+                <div class="about__flex">
+                    <div class="about__radioButtons">
+                        <div class="about__radioBlock">
+                            <input class="about__radio" type="radio" name="about" id="info">
+                            <label for="info"></label>                        
+                            
+                            <p class="text about__radioText">
+                                Информация
+                            </p>
+                        </div>
+
+                        <div class="about__radioBlock">
+                            
+                            <input class="about__radio" type="radio" name="about" id="skills">
+                            <label for="skills"></label>
+                            
+                            <p class="text about__radioText">
+                                Навыки
+                            </p>
+                        </div>
+                    </div>
+                    <div class="about__content">
+                        <div class="about__information">
+                            <h1 class="about__title title">
+                                Меня зовут Смаковский Илья и я веб-разработчик!
+                            </h1>
+                            <p class="about__text text">
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Est, iusto voluptatibus quo sequi modi, impedit soluta esse voluptas laboriosam iste necessitatibus omnis perspiciatis molestias harum ea veritatis voluptatum, illum beatae dicta enim voluptatem assumenda. In eaque dolorum id velit ducimus eligendi rerum nam quos ut, unde illum impedit corporis. Atque.
+                            </p>
+                        </div>
+                        <div class="about__mySkills"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    <!-- CLOSE ABOUT -->
 
     <!-- SCRIPTS -->
     <script src="./app/main.js"></script>
