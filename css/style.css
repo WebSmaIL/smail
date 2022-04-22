@@ -442,8 +442,8 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  max-width: 200px;
-  max-height: 150px;
+  max-width: 250px;
+  max-height: 250px;
 }
 .about__radioBlock {
   margin-left: 20px;
@@ -472,45 +472,83 @@ body {
   font-weight: 700;
 }
 .about__radio {
+  display: none;
   width: 25px;
   height: 25px;
-  margin: 10px auto;
+  margin: 25px auto;
 }
 .about__radio + label {
-  display: -webkit-inline-box;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-user-select: none;
-     -moz-user-select: none;
-      -ms-user-select: none;
-          user-select: none;
+  width: 25px;
+  height: 25px;
+  margin-bottom: 25px;
+  border-radius: 50%;
+  border: 2px solid rgb(255, 255, 255);
+  outline: 2px solid rgb(0, 0, 0);
+  cursor: pointer;
+  position: relative;
+  -webkit-transition: all 0.3s linear;
+  -o-transition: all 0.3s linear;
+  transition: all 0.3s linear;
+}
+.about__radio + label > span {
+  display: block;
+  width: 10px;
+  height: 5px;
+  background: #fff;
+  position: absolute;
+  top: -5px;
+  right: 0;
+  z-index: 1;
+  -webkit-transform: rotate(25deg);
+      -ms-transform: rotate(25deg);
+          transform: rotate(25deg);
 }
 .about__radio + label::before {
   content: "";
-  display: inline-block;
-  width: 15px;
-  height: 15px;
-  -ms-flex-negative: 0;
-      flex-shrink: 0;
-  -webkit-box-flex: 0;
-      -ms-flex-positive: 0;
-          flex-grow: 0;
-  border: 1px solid #000000;
+  display: block;
+  width: 50px;
+  height: 50px;
   border-radius: 50%;
-  margin-right: 7px;
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-size: 50% 50%;
+  border: 3px solid #000;
+  border-top: 2px solid rgb(255, 255, 255);
+  position: absolute;
+  top: 50%;
+  margin-top: -25px;
+  left: 50%;
+  margin-left: -25px;
+  -webkit-transition: all 0.5s ease-out 0.3s;
+  -o-transition: all 0.5s ease-out 0.3s;
+  transition: all 0.5s ease-out 0.3s;
+}
+.about__radio:hover + label {
+  -webkit-transform: rotate(-180deg) scale(1.2);
+      -ms-transform: rotate(-180deg) scale(1.2);
+          transform: rotate(-180deg) scale(1.2);
+}
+.about__radio:hover + label::before {
+  -webkit-transform: scale(1.2) rotate(240deg);
+      -ms-transform: scale(1.2) rotate(240deg);
+          transform: scale(1.2) rotate(240deg);
+}
+.about__radio:checked + label {
+  -webkit-transform: rotate(155deg) scale(1.2);
+      -ms-transform: rotate(155deg) scale(1.2);
+          transform: rotate(155deg) scale(1.2);
+  background: #000;
+}
+.about__radio:checked + label::before {
+  -webkit-transform: scale(1.2) rotate(745deg);
+      -ms-transform: scale(1.2) rotate(745deg);
+          transform: scale(1.2) rotate(745deg);
 }
 .about__content {
-  max-width: 100%;
+  width: 100%;
   min-height: 300px;
-  padding: 30px;
+  padding: 0 30px;
+  overflow-y: hidden;
   border-top: 10px solid #000;
   border-radius: 10px;
+  position: relative;
 }
 .about__title {
   color: #000;
@@ -520,6 +558,95 @@ body {
   color: #000;
 }
 .about__information {
+  display: none;
   width: 100%;
   height: 100%;
+  padding: 15px;
+  border: 5px solid #000;
+  border-top: #fff;
+  -webkit-box-shadow: 0 0 50px rgba(0, 0, 0, 0.414);
+          box-shadow: 0 0 50px rgba(0, 0, 0, 0.414);
+  position: absolute;
+  top: 0;
+  left: 0;
+  -webkit-transform: translateY(-80%);
+      -ms-transform: translateY(-80%);
+          transform: translateY(-80%);
+}
+.about__mySkills {
+  width: 100%;
+  height: 100%;
+  padding: 15px;
+  border: 5px solid #000;
+  border-top: #fff;
+  -webkit-box-shadow: 0 0 50px rgba(0, 0, 0, 0.614);
+          box-shadow: 0 0 50px rgba(0, 0, 0, 0.614);
+  position: relative;
+  text-align: center;
+}
+.about__mySkillCards {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 50%;
+          flex: 1 1 50%;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+  height: 100%;
+}
+.about__mySkillCol {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 50%;
+          flex: 1 1 50%;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 100%;
+  height: 100%;
+}
+.about__mySkillCard {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 50%;
+          flex: 1 1 50%;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-bottom: 20px;
+}
+@media (max-width: 767px) {
+  .about__mySkillCard {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+}
+.about__cardCircle {
+  width: 100px;
+  height: 100px;
+  background: rgb(255, 255, 255);
+  border: 5px solid #000;
+  border-radius: 50%;
+}
+.about__cardTitle {
+  color: #000;
 }

@@ -22,8 +22,8 @@
 
     &__radioButtons {
         @include flex(1 1 50%, space-around, center);
-        max-width: 200px;
-        max-height: 150px;
+        max-width: 250px;
+        max-height: 250px;
     }
 
     &__radioBlock {
@@ -45,41 +45,197 @@
     }
 
     &__radio {
+        display: none;
         width: 25px;
         height: 25px;
-        margin: 10px auto;
+        margin: 25px auto;
+
+        &+label {
+            width: 25px;
+            height: 25px;
+            margin-bottom: 25px;
+
+            border-radius: 50%;
+            border: 2px solid rgb(255, 255, 255);
+
+            outline: 2px solid rgb(0, 0, 0);
+            
+
+            cursor: pointer;
+
+            position: relative;
+
+            transition: all .3s linear;
+
+
+            &>span {
+                display: block;
+                width: 10px;
+                height: 5px;
+
+                background: #fff;
+
+                position: absolute;
+                top: -5px;
+                right: 0;
+                z-index: 1;
+
+                transform: rotate(25deg);
+            }
+            &::before {
+                content: "";
+                display: block;
+
+                width: 50px;
+                height: 50px;
+
+                border-radius: 50%;
+                border: 3px solid #000;
+                border-top: 2px solid rgb(255, 255, 255);
+
+                position: absolute;
+                top: 50%; margin-top: -25px;
+                left: 50%; margin-left: -25px;
+                
+                transition: all .5s ease-out .3s;
+            }
+
+            
+        }
+
+        &:hover {
+
+            &+label {
+                transform: rotate(-180deg) scale(1.2);
+
+                &::before {
+                    transform: scale(1.2) rotate(240deg);
+                }
+            }
+        }
+        &:checked {
+
+            &+label {
+                transform: rotate(155deg) scale(1.2);
+                background: #000;
+
+                &::before {
+                    transform: scale(1.2) rotate(745deg);
+                }
+            }
+        }
     }
+
+
+
 
     // .about__content
 
     &__content {
-        max-width: 100%;
+        width: 100%;
         min-height: 300px;
-        padding: 30px;
+        padding: 0 30px;
+
+        overflow-y: hidden;
 
         border-top: 10px solid #000;
         border-radius: 10px;
+
+        position: relative;
     }
 
     &__title {
         color: #000;
+        // opacity: 0;
 
         margin-bottom: 20px;
+
+        // transform: translateX(-100%);
     }
 
     &__text {
         color: #000;
+        // opacity: 0;
+
+        // transform: translateX(-100%);
     }
     
     // .about__information
 
     &__information {
+        display: none;
         width: 100%;
         height: 100%;
+        padding: 15px;
+
+        border: 5px solid #000;
+        border-top: #fff;
+
+        box-shadow: 0 0 50px rgba(0, 0, 0, 0.414);
+
+        position: absolute;
+        top: 0;
+        left: 0;
+
+        transform: translateY(-80%);
+
+
     }
 
     // .about__mySkills
 
     &__mySkills {
+        width: 100%;
+        height: 100%;
+        padding: 15px;
+
+        border: 5px solid #000;
+        border-top: #fff;
+        box-shadow: 0 0 50px rgba(0, 0, 0, 0.614);
+
+        position: relative;
+        // top: 0;
+        // left: 0;
+
+        text-align: center;
+
+        // transform: translateY(-60%);
+    }
+
+    &__mySkillCards {
+        @include flex(1 1 50%, space-around, center);
+        width: 100%;
+        height: 100%;
+    }
+
+    &__mySkillCol {
+        @include flex(1 1 50%, space-around, center);
+        flex-direction: column;
+        width: 100%;
+        height: 100%;
+
+        
+    }
+
+    &__mySkillCard {
+        @include flex(1 1 50%, space-around, center);
+        
+        margin-bottom: 20px;
+
+        @media (max-width: 767px) {
+            flex-direction: column;
+        }
+    }
+
+    &__cardCircle {
+        width: 100px;
+        height: 100px;
+        background: rgb(255, 255, 255);
+        border: 5px solid #000;
+        border-radius: 50%;
+    }
+
+    &__cardTitle {
+        color: #000;
     }
 }
