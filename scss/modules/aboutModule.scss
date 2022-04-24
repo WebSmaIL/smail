@@ -191,7 +191,7 @@
 
         border: 5px solid #000;
         border-top: #fff;
-        box-shadow: 0 0 50px rgba(0, 0, 0, 0.614);
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.614);
 
         position: relative;
         // top: 0;
@@ -213,29 +213,30 @@
         flex-direction: column;
         width: 100%;
         height: 100%;
-
-        
     }
 
     &__mySkillCard {
+        min-width: 200px;
         @include flex(1 1 50%, space-around, center);
-        
         margin-bottom: 20px;
-
-        @media (max-width: 767px) {
-            flex-direction: column;
-        }
+        padding: 20px;
+        flex-direction: column;
     }
 
     &__cardCircle {
-        width: 100px;
-        height: 100px;
-        background: rgb(255, 255, 255);
-        border: 5px solid #000;
-        border-radius: 50%;
+        width: 150px;
+        height: 150px;
+    }
+
+    #animated {
+        width: 100%;
+        height: 100%;
+
+        font-family: 'Montserrat', sans-serif;
     }
 
     &__cardTitle {
         color: #000;
+        font-size: 24px;
     }
 }
