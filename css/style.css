@@ -642,7 +642,7 @@ body {
   width: 150px;
   height: 150px;
 }
-.about #animated {
+.about__textAnimate {
   width: 100%;
   height: 100%;
   font-family: "Montserrat", sans-serif;
