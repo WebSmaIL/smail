@@ -551,8 +551,8 @@ body {
   position: relative;
 }
 .about__title {
-  color: #000;
   margin-bottom: 20px;
+  color: #000;
 }
 .about__text {
   color: #000;
@@ -564,16 +564,19 @@ body {
   padding: 15px;
   border: 5px solid #000;
   border-top: #fff;
-  -webkit-box-shadow: 0 0 50px rgba(0, 0, 0, 0.414);
-          box-shadow: 0 0 50px rgba(0, 0, 0, 0.414);
-  position: absolute;
-  top: 0;
-  left: 0;
-  -webkit-transform: translateY(-80%);
-      -ms-transform: translateY(-80%);
-          transform: translateY(-80%);
+  -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.414);
+          box-shadow: 0 0 10px rgba(0, 0, 0, 0.414);
+  -webkit-transform: translateY(-100%);
+      -ms-transform: translateY(-100%);
+          transform: translateY(-100%);
+}
+.about__information.active {
+  display: block;
+  -webkit-animation: animate 1s ease 0.2s forwards;
+          animation: animate 1s ease 0.2s forwards;
 }
 .about__mySkills {
+  display: none;
   width: 100%;
   height: 100%;
   padding: 15px;
@@ -581,8 +584,36 @@ body {
   border-top: #fff;
   -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.614);
           box-shadow: 0 0 10px rgba(0, 0, 0, 0.614);
-  position: relative;
   text-align: center;
+  position: relative;
+  -webkit-transform: translateY(-100%);
+      -ms-transform: translateY(-100%);
+          transform: translateY(-100%);
+}
+.about__mySkills.active {
+  display: block;
+  -webkit-animation: animate 1s ease 0.2s forwards;
+          animation: animate 1s ease 0.2s forwards;
+}
+@-webkit-keyframes animate {
+  from {
+    -webkit-transform: translateY(-100%);
+            transform: translateY(-100%);
+  }
+  to {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+}
+@keyframes animate {
+  from {
+    -webkit-transform: translateY(-100%);
+            transform: translateY(-100%);
+  }
+  to {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
 }
 .about__mySkillCards {
   display: -webkit-box;
@@ -598,6 +629,14 @@ body {
           align-items: center;
   width: 100%;
   height: 100%;
+}
+@media screen and (max-width: 767px) {
+  .about__mySkillCards {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
 }
 .about__mySkillCol {
   display: -webkit-box;
@@ -617,9 +656,19 @@ body {
           flex-direction: column;
   width: 100%;
   height: 100%;
+  margin-left: 10px;
+}
+.about__mySkillCol:first-child {
+  margin-left: 0;
+}
+@media screen and (max-width: 767px) {
+  .about__mySkillCol {
+    margin-left: 0;
+  }
 }
 .about__mySkillCard {
-  min-width: 200px;
+  width: 100%;
+  max-width: 400px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -631,23 +680,37 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  align-items: center;
   margin-bottom: 20px;
-  padding: 20px;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
 }
-.about__cardCircle {
-  width: 150px;
-  height: 150px;
-}
-.about__textAnimate {
+.about__cardStat {
   width: 100%;
   height: 100%;
-  font-family: "Montserrat", sans-serif;
+  margin-left: 10px;
+  padding: 10px;
+  background: #000;
+}
+.about__cardLine {
+  width: 100%;
+  height: 30px;
+  padding: 5px;
+  border: 4px solid #fff;
+}
+.about__cardLine > span {
+  display: block;
+  width: 0;
+  height: 100%;
+  background: #fff;
+  -webkit-transition: all 0.5s ease-in-out;
+  -o-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+}
+.about__cardLine:hover > span {
+  width: 90%;
 }
 .about__cardTitle {
-  color: #000;
+  color: rgb(255, 255, 255);
   font-size: 24px;
+  font-weight: normal;
+  text-align: left;
 }

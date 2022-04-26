@@ -145,22 +145,20 @@
     }
 
     &__title {
-        color: #000;
-        // opacity: 0;
-
         margin-bottom: 20px;
 
-        // transform: translateX(-100%);
+        color: #000;
+
+        // opacity: 0;
+        // transform: translateX(-50%);
     }
 
     &__text {
         color: #000;
-        // opacity: 0;
 
-        // transform: translateX(-100%);
+        // opacity: 0;
+        // transform: translateX(-50%);
     }
-    
-    // .about__information
 
     &__information {
         display: none;
@@ -171,20 +169,21 @@
         border: 5px solid #000;
         border-top: #fff;
 
-        box-shadow: 0 0 50px rgba(0, 0, 0, 0.414);
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.414);
 
-        position: absolute;
-        top: 0;
-        left: 0;
+        transform: translateY(-100%);
 
-        transform: translateY(-80%);
+        &.active {
+            display: block;
 
-
+            animation: animate 1s ease .2s forwards;
+        }
     }
 
     // .about__mySkills
 
     &__mySkills {
+        display: none;
         width: 100%;
         height: 100%;
         padding: 15px;
@@ -193,19 +192,36 @@
         border-top: #fff;
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.614);
 
-        position: relative;
-        // top: 0;
-        // left: 0;
-
         text-align: center;
 
-        // transform: translateY(-60%);
+        position: relative;
+
+        transform: translateY(-100%);
+
+        &.active {
+            display: block;
+
+            animation: animate 1s ease .2s forwards;
+        }
+    }
+
+    @keyframes animate {
+      from {
+        transform: translateY(-100%);
+      }
+      to {
+        transform: translateY(0);
+      }
     }
 
     &__mySkillCards {
         @include flex(1 1 50%, space-around, center);
         width: 100%;
         height: 100%;
+
+        @media screen and (max-width: 767px) {
+          flex-direction: column;
+        }
     }
 
     &__mySkillCol {
@@ -213,31 +229,65 @@
         flex-direction: column;
         width: 100%;
         height: 100%;
+
+        margin-left: 10px;
+
+        &:first-child {
+            margin-left: 0;
+        }
+
+        @media screen and (max-width: 767px) {
+            margin-left: 0;
+        }
     }
 
     &__mySkillCard {
-        min-width: 200px;
+        width: 100%;
+        max-width: 400px;
+
+        
         @include flex(1 1 50%, space-around, center);
+        align-items:center;
         margin-bottom: 20px;
-        padding: 20px;
-        flex-direction: column;
     }
 
-    &__cardCircle {
-        width: 150px;
-        height: 150px;
-    }
-
-    &__textAnimate {
+    &__cardStat {
         width: 100%;
         height: 100%;
 
+        margin-left: 10px;
+        padding: 10px;
 
-        font-family: 'Montserrat', sans-serif;
+        background: #000;
+    }
+
+    &__cardLine {
+        width: 100%;
+        height: 30px;
+        padding: 5px;
+
+        border: 4px solid #fff;
+
+        & > span {
+            display: block;
+            width: 0;
+            height: 100%;
+            background: #fff;
+
+            transition: all .5s ease-in-out;
+        }
+
+        &:hover {
+            & > span {
+                width: 90%;
+            }
+        }
     }
 
     &__cardTitle {
-        color: #000;
+        color: rgb(255, 255, 255);
         font-size: 24px;
+        font-weight: normal;
+        text-align: left;
     }
 }

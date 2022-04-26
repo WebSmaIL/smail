@@ -1,37 +1,13 @@
-function animator(id, svgId, str) {
-  let $count = $(('#' + id));
-  let svg = document.getElementById(svgId);
+radioBTNS = document.querySelectorAll('.about__radio');
 
-  $({ Counter: 0 }).animate({ Counter: $count.text() }, {
-    duration: 1500,
-    easing: 'linear',
-    step: function () {
-      $count.text(Math.ceil(this.Counter)+ "%");
-  
-      if ($count.text() == str) {
-         $(this).stop();
-         svg.pauseAnimations();
-      }
+radioBTNS.forEach(element => {
+  element.addEventListener("change", (e) => {
+    if (element.id == "skills") {
+      document.querySelector('.about__information').classList.remove('active');
+      document.querySelector('.about__mySkills').classList.add('active');
+    } else {
+      document.querySelector('.about__mySkills').classList.remove('active');
+      document.querySelector('.about__information').classList.add('active');
     }
   });
-}
-
-
-
-// HTML5
-animator('textAnim-1', 'svg-1', '93%');
-
-// CSS3
-animator('textAnim-2', 'svg-2', '87%');
-
-// JS
-animator('textAnim-3', 'svg-3', '80%');
-
-// SCSS
-animator('textAnim-4', 'svg-4', '89%');
-
-// GULP
-animator('textAnim-5', 'svg-5', '74%');
-
-// GIT
-animator('textAnim-6', 'svg-6', '80%');
+});
