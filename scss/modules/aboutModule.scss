@@ -2,7 +2,7 @@
     display: block;
     width: 100%;
     min-height: 100vh;
-    padding: 200px 30px 0 30px;
+    padding: 100px 30px;
 
     @media (max-width: 1199px) {
         padding-top: 100px;
@@ -109,7 +109,7 @@
                 transform: rotate(-180deg) scale(1.2);
 
                 &::before {
-                    transform: scale(1.2) rotate(240deg);
+                    transform: scale(1.2) rotate(-335deg);
                 }
             }
         }
@@ -133,7 +133,6 @@
 
     &__content {
         width: 100%;
-        min-height: 300px;
         padding: 0 30px;
 
         overflow-y: hidden;
@@ -148,16 +147,29 @@
         margin-bottom: 20px;
 
         color: #000;
-
-        // opacity: 0;
-        // transform: translateX(-50%);
     }
 
     &__text {
         color: #000;
 
-        // opacity: 0;
-        // transform: translateX(-50%);
+        opacity: 0;
+        transform: translateX(-50%);
+
+        &.active {
+            animation: cardTextAnim 1s ease .5s forwards;
+        }
+    }
+
+    // анимация для текста
+    @keyframes cardTextAnim {
+      from {
+        opacity: 0;
+        transform: translateX(-50%);
+      }
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
     }
 
     &__information {
@@ -165,6 +177,8 @@
         width: 100%;
         height: 100%;
         padding: 15px;
+
+        overflow: hidden;
 
         border: 5px solid #000;
         border-top: #fff;
@@ -205,6 +219,7 @@
         }
     }
 
+    // анимация блоков
     @keyframes animate {
       from {
         transform: translateY(-100%);
@@ -217,7 +232,6 @@
     &__mySkillCards {
         @include flex(1 1 50%, space-around, center);
         width: 100%;
-        height: 100%;
 
         @media screen and (max-width: 767px) {
           flex-direction: column;
@@ -273,15 +287,39 @@
             width: 0;
             height: 100%;
             background: #fff;
-
-            transition: all .5s ease-in-out;
         }
 
-        &:hover {
+        &.active {
             & > span {
-                width: 90%;
+                animation: lineAnim 1s ease .5s forwards;
             }
         }
+    }
+
+    @keyframes lineAnim {
+        from {
+            width: 0;
+        }
+        to {
+            width: 90%;
+        }
+      }
+
+    &__cardLogo {
+        opacity: 0;
+
+        &.active {
+            animation: logoAnim 1s ease .5s forwards;
+        }
+    }
+
+    @keyframes logoAnim {
+      from {
+          opacity: 0;
+      }
+      to {
+          opacity: 1;
+      }
     }
 
     &__cardTitle {

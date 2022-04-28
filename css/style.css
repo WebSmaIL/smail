@@ -404,7 +404,7 @@ body {
   display: block;
   width: 100%;
   min-height: 100vh;
-  padding: 200px 30px 0 30px;
+  padding: 100px 30px;
   background: rgb(255, 255, 255);
 }
 @media (max-width: 1199px) {
@@ -526,9 +526,9 @@ body {
           transform: rotate(-180deg) scale(1.2);
 }
 .about__radio:hover + label::before {
-  -webkit-transform: scale(1.2) rotate(240deg);
-      -ms-transform: scale(1.2) rotate(240deg);
-          transform: scale(1.2) rotate(240deg);
+  -webkit-transform: scale(1.2) rotate(-335deg);
+      -ms-transform: scale(1.2) rotate(-335deg);
+          transform: scale(1.2) rotate(-335deg);
 }
 .about__radio:checked + label {
   -webkit-transform: rotate(155deg) scale(1.2);
@@ -543,7 +543,6 @@ body {
 }
 .about__content {
   width: 100%;
-  min-height: 300px;
   padding: 0 30px;
   overflow-y: hidden;
   border-top: 10px solid #000;
@@ -556,12 +555,45 @@ body {
 }
 .about__text {
   color: #000;
+  opacity: 0;
+  -webkit-transform: translateX(-50%);
+      -ms-transform: translateX(-50%);
+          transform: translateX(-50%);
+}
+.about__text.active {
+  -webkit-animation: cardTextAnim 1s ease 0.5s forwards;
+          animation: cardTextAnim 1s ease 0.5s forwards;
+}
+@-webkit-keyframes cardTextAnim {
+  from {
+    opacity: 0;
+    -webkit-transform: translateX(-50%);
+            transform: translateX(-50%);
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+}
+@keyframes cardTextAnim {
+  from {
+    opacity: 0;
+    -webkit-transform: translateX(-50%);
+            transform: translateX(-50%);
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
 }
 .about__information {
   display: none;
   width: 100%;
   height: 100%;
   padding: 15px;
+  overflow: hidden;
   border: 5px solid #000;
   border-top: #fff;
   -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.414);
@@ -628,7 +660,6 @@ body {
       -ms-flex-align: center;
           align-items: center;
   width: 100%;
-  height: 100%;
 }
 @media screen and (max-width: 767px) {
   .about__mySkillCards {
@@ -701,12 +732,49 @@ body {
   width: 0;
   height: 100%;
   background: #fff;
-  -webkit-transition: all 0.5s ease-in-out;
-  -o-transition: all 0.5s ease-in-out;
-  transition: all 0.5s ease-in-out;
 }
-.about__cardLine:hover > span {
-  width: 90%;
+.about__cardLine.active > span {
+  -webkit-animation: lineAnim 1s ease 0.5s forwards;
+          animation: lineAnim 1s ease 0.5s forwards;
+}
+@-webkit-keyframes lineAnim {
+  from {
+    width: 0;
+  }
+  to {
+    width: 90%;
+  }
+}
+@keyframes lineAnim {
+  from {
+    width: 0;
+  }
+  to {
+    width: 90%;
+  }
+}
+.about__cardLogo {
+  opacity: 0;
+}
+.about__cardLogo.active {
+  -webkit-animation: logoAnim 1s ease 0.5s forwards;
+          animation: logoAnim 1s ease 0.5s forwards;
+}
+@-webkit-keyframes logoAnim {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes logoAnim {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 .about__cardTitle {
   color: rgb(255, 255, 255);
