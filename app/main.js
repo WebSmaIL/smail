@@ -3,12 +3,12 @@ const radioBTNS = document.querySelectorAll('.about__radio');
 
 // Массив с анимированными блоками информации
 const informationArr = [document.querySelector('.about__information'),
-                  document.querySelector('.about__text')];
+                        document.querySelector('.about__textBlock')];
 
 // Массив с анимированными блоками навыков
 const skillsArr = [document.querySelector('.about__mySkills'),
-             document.querySelectorAll('.about__cardLogo'),
-             document.querySelectorAll('.about__cardLine')];
+                    document.querySelectorAll('.about__cardLogo'),
+                    document.querySelectorAll('.about__cardLine')];
 
 
 
