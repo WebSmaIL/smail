@@ -549,6 +549,11 @@ body {
   border-radius: 10px;
   position: relative;
 }
+@media screen and (max-width: 767px) {
+  .about__content {
+    padding: 0;
+  }
+}
 .about__title {
   margin-bottom: 20px;
   color: #000;
@@ -733,24 +738,124 @@ body {
   height: 100%;
   background: #fff;
 }
-.about__cardLine.active > span {
-  -webkit-animation: lineAnim 1s ease 0.5s forwards;
-          animation: lineAnim 1s ease 0.5s forwards;
+.about__cardLine.one.active > span {
+  -webkit-animation: lineAnim1 1s ease 0.5s forwards;
+          animation: lineAnim1 1s ease 0.5s forwards;
 }
-@-webkit-keyframes lineAnim {
+.about__cardLine.two.active > span {
+  -webkit-animation: lineAnim2 1s ease 0.5s forwards;
+          animation: lineAnim2 1s ease 0.5s forwards;
+}
+.about__cardLine.three.active > span {
+  -webkit-animation: lineAnim3 1s ease 0.5s forwards;
+          animation: lineAnim3 1s ease 0.5s forwards;
+}
+.about__cardLine.four.active > span {
+  -webkit-animation: lineAnim4 1s ease 0.5s forwards;
+          animation: lineAnim4 1s ease 0.5s forwards;
+}
+.about__cardLine.five.active > span {
+  -webkit-animation: lineAnim5 1s ease 0.5s forwards;
+          animation: lineAnim5 1s ease 0.5s forwards;
+}
+.about__cardLine.six.active > span {
+  -webkit-animation: lineAnim6 1s ease 0.5s forwards;
+          animation: lineAnim6 1s ease 0.5s forwards;
+}
+@-webkit-keyframes lineAnim1 {
   from {
     width: 0;
   }
   to {
-    width: 90%;
+    width: 96%;
   }
 }
-@keyframes lineAnim {
+@keyframes lineAnim1 {
   from {
     width: 0;
   }
   to {
-    width: 90%;
+    width: 96%;
+  }
+}
+@-webkit-keyframes lineAnim2 {
+  from {
+    width: 0;
+  }
+  to {
+    width: 89%;
+  }
+}
+@keyframes lineAnim2 {
+  from {
+    width: 0;
+  }
+  to {
+    width: 89%;
+  }
+}
+@-webkit-keyframes lineAnim3 {
+  from {
+    width: 0;
+  }
+  to {
+    width: 80%;
+  }
+}
+@keyframes lineAnim3 {
+  from {
+    width: 0;
+  }
+  to {
+    width: 80%;
+  }
+}
+@-webkit-keyframes lineAnim4 {
+  from {
+    width: 0;
+  }
+  to {
+    width: 85%;
+  }
+}
+@keyframes lineAnim4 {
+  from {
+    width: 0;
+  }
+  to {
+    width: 85%;
+  }
+}
+@-webkit-keyframes lineAnim5 {
+  from {
+    width: 0;
+  }
+  to {
+    width: 70%;
+  }
+}
+@keyframes lineAnim5 {
+  from {
+    width: 0;
+  }
+  to {
+    width: 70%;
+  }
+}
+@-webkit-keyframes lineAnim6 {
+  from {
+    width: 0;
+  }
+  to {
+    width: 89%;
+  }
+}
+@keyframes lineAnim6 {
+  from {
+    width: 0;
+  }
+  to {
+    width: 89%;
   }
 }
 .about__cardLogo {
@@ -781,4 +886,9 @@ body {
   font-size: 24px;
   font-weight: normal;
   text-align: left;
+}
+@media screen and (max-width: 767px) {
+  .about__cardTitle {
+    font-size: 16px;
+  }
 }

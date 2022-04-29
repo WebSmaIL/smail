@@ -28,23 +28,7 @@ if (radioBTNS[0].checked) {
         element.classList.add('active');
     });
 
-} else {
-
-    skillsArr.forEach(element => {
-        if (element instanceof NodeList) {
-            element.forEach(secEl => {
-                secEl.classList.add('active');
-            })
-        } else {
-            element.classList.add('active');
-        }
-    });
-
-    informationArr.forEach(element => {
-        element.classList.remove('active');
-    });
 }
-
 
 radioBTNS.forEach(element => {
   element.addEventListener("change", (e) => {
@@ -52,9 +36,13 @@ radioBTNS.forEach(element => {
 
         skillsArr.forEach(element => {
             if (element instanceof NodeList) {
-                element.forEach(secEl => {
-                    secEl.classList.add('active');
-                })
+                let num = 100;
+                for (let i = 0; i < element.length; i++) {
+                    setTimeout(() => {
+                        element[i].classList.add('active');
+                    }, num);
+                    num += 100;
+                }
             } else {
                 element.classList.add('active');
             }

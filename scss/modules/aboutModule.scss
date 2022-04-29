@@ -135,6 +135,10 @@
         width: 100%;
         padding: 0 30px;
 
+        @media screen and (max-width: 767px) {
+            padding: 0;
+        }
+
         overflow-y: hidden;
 
         border-top: 10px solid #000;
@@ -288,22 +292,91 @@
             height: 100%;
             background: #fff;
         }
-
-        &.active {
+    
+        
+        &.one.active {
             & > span {
-                animation: lineAnim 1s ease .5s forwards;
+                animation: lineAnim1 1s ease .5s forwards;
+            }
+        }
+        &.two.active {
+            & > span {
+                animation: lineAnim2 1s ease .5s forwards;
+            }
+        }
+        &.three.active {
+            & > span {
+                animation: lineAnim3 1s ease .5s forwards;
+            }
+        }
+        &.four.active {
+            & > span {
+                animation: lineAnim4 1s ease .5s forwards;
+            }
+        }
+        &.five.active {
+            & > span {
+                animation: lineAnim5 1s ease .5s forwards;
+            }
+        }
+        &.six.active {
+            & > span {
+                animation: lineAnim6 1s ease .5s forwards;
             }
         }
     }
 
-    @keyframes lineAnim {
+    @keyframes lineAnim1 {
         from {
             width: 0;
         }
         to {
-            width: 90%;
+            width: 96%;
         }
-      }
+    }
+    
+    @keyframes lineAnim2 {
+        from {
+            width: 0;
+        }
+        to {
+            width: 89%;
+        }
+    }
+
+    @keyframes lineAnim3 {
+        from {
+            width: 0;
+        }
+        to {
+            width: 80%;
+        }
+    }
+    @keyframes lineAnim4 {
+        from {
+            width: 0;
+        }
+        to {
+            width: 85%;
+        }
+    }
+    @keyframes lineAnim5 {
+        from {
+            width: 0;
+        }
+        to {
+            width: 70%;
+        }
+    }
+    @keyframes lineAnim6 {
+        from {
+            width: 0;
+        }
+        to {
+            width: 89%;
+        }
+    }
+
 
     &__cardLogo {
         opacity: 0;
@@ -327,5 +400,9 @@
         font-size: 24px;
         font-weight: normal;
         text-align: left;
+
+        @media screen and (max-width: 767px) {
+            font-size: 16px;
+        }
     }
 }
