@@ -8,22 +8,83 @@
 
     &__title {
         text-align: center;
+        margin-bottom: 50px;
     }
 
     // .portfolio__flex
 
     &__flex {
         @include flex(1 1 50%, space-around, center);
+        flex-direction: column;
         width: 100%;
     }
 
     // .portfolio__cards
 
     &__cards {
+        display: flex;
+        align-items: center;
+
+        width: 100%;
+        height: 300px;
+        margin-bottom: 100px;
+
+        position: relative;
+
+        perspective: 2500px;
+    }
+
+    &__card {
+        max-width: 600px;
+        max-height: 400px;
+
+        border: 10px solid #fff;
+        box-shadow: 0 0 20px rgba(255, 255, 255, 0.494);
+        cursor: pointer;
+
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 3;
+
+        transform: rotateX(70deg);
+        transition: all .5s ease;
+
+        &:hover {
+            transform: rotateX(70deg) translateX(30px);
+        }
+
+        &:nth-child(2) {
+            transform: rotateX(70deg) translateY(-30px) translateZ(-80px);
+            z-index: 2;
+
+            &:hover {
+                transform: rotateX(70deg) translateY(-30px) translateZ(-80px) translateX(30px);
+            }
+        }
+        &:nth-child(3) {
+            transform: rotateX(70deg) translateY(-50px) translateZ(-160px);
+            z-index: 1;
+
+            &:hover {
+                transform: rotateX(70deg) translateY(-50px) translateZ(-160px) translateX(30px);
+            }
+        }
+
+        &>img {
+            display: block;
+            width: 100%;
+            height: 100%;
+        }
     }
 
     // .portfolio__view
 
     &__view {
+        display: block;
+        max-width: 100%;
+        max-height: 250px;
+
+        border: 10px dashed #fff;
     }
 }
