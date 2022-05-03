@@ -26,8 +26,7 @@
         align-items: center;
 
         width: 100%;
-        height: 300px;
-        margin-bottom: 100px;
+        margin-bottom: 30px;
 
         @media screen and (max-width: 767px) {
           flex-direction: column;
@@ -40,8 +39,8 @@
         max-height: 400px;
         margin-right: 20px;
 
-        border: 10px solid #fff;
-        box-shadow: 0 10px 10px rgba(255, 255, 255, 0.494);
+        
+        box-shadow: 0 0 10px rgba(255, 255, 255, 0.494);
         transition: all .5s ease;
 
         &:last-child {
@@ -54,6 +53,7 @@
             height: 100%;
 
             filter: grayscale(100%);
+            border: 10px solid #fff;
 
             transition: all .5s ease;
         }
@@ -61,6 +61,11 @@
         &:hover {
             transform: scale(1.05);
 
+            &>img {
+                filter: none;
+            }
+        }
+        &.active {
             &>img {
                 filter: none;
             }
@@ -79,8 +84,110 @@
     // .portfolio__view
 
     &__view {
-        display: block;
+        display: none;
         width: 100%;
-        
+
+        &.active {
+            display: block;
+        }
+    }
+
+    &__webPreview {
+        width: 100%;
+        margin-bottom: 20px;
+        padding: 5px;
+
+        outline: 5px dashed #fff;
+
+        text-align: center;
+    }
+
+    &__webImg {
+        display: none;
+        width: 100%;
+        height: 100%;
+
+        &.active {
+            display: block;
+        }
+    }
+
+    // .portfolio__webInfo
+
+    &__webInfo {
+        display: flex;
+        width: 100%;
+        align-items: center;
+        flex-direction: column;
+        padding: 20px;
+
+        border:5px solid rgb(0, 0, 0);
+        outline: 5px solid #fff;
+        background: #fff;
+    }
+
+    // .portfolio__webTitle
+
+    &__webTitle {
+        display: none;
+        width: 100%;
+        min-height: 100%;
+        min-height: 100px;
+        margin-bottom: 5px;
+        padding: 10px;
+
+        color: rgb(255, 255, 255);
+        text-align: center;
+        background: #000;
+        border: 5px solid #fff;
+        outline: 5px solid rgb(0, 0, 0);
+
+        &.active {
+            display: block;
+        }
+    }
+
+    // .portfolio__webText
+
+    &__webText {
+        display: none;
+        width: 100%;
+        height: 100%;
+        min-height: 100px;
+        padding: 10px;
+        margin-bottom: 10px;
+
+        color: rgb(255, 255, 255);
+        background: #000;
+        border: 5px solid #fff;
+        outline: 5px solid rgb(0, 0, 0);
+
+        &.active {
+            display: block;
+        }
+    }
+
+    // .portfolio__webLink
+
+    &__webLink {
+        display: block;
+        padding: 5px;
+        width: 100%;
+        min-height: 50px;
+
+        text-align: center;
+        color: rgb(255, 255, 255);
+        background: #000;
+        border: 5px solid #fff;
+        outline: 5px solid rgb(0, 0, 0);
+
+        transition: all .5s ease;
+
+        &:hover {
+            color: rgb(0, 0, 0);
+            background: rgb(255, 255, 255);
+            border: 5px solid rgb(0, 0, 0);
+            outline: 5px solid rgb(255, 255, 255);
+        }
     }
 }

@@ -72,3 +72,101 @@ radioBTNS.forEach(element => {
     }
   });
 });
+
+
+     // ================== \\
+    //  Портфолио карточки  \\
+//  \\  ==================  //
+
+const webCards = document.querySelector('.portfolio__cards');
+const pfView = document.querySelector('.portfolio__view');
+
+const webCard1 = [pfCard1, pfCardImg1];
+const webCard2 = [pfCard2, pfCardImg2];
+const webCard3 = [pfCard3, pfCardImg3];
+
+const site1 = [webImg1, webTitle1, webText1];
+const site2 = [webImg2, webTitle2, webText2];
+const site3 = [webImg3, webTitle3, webText3];
+
+webCards.addEventListener('click', (e) => {
+    let target = e.target;
+
+    if ((target.tagName == 'IMG' || target.tagName == 'A') && !target.classList.contains('active')) {
+        console.log('da');
+        if(!pfView.classList.contains('active')) {
+            pfView.classList.add('active');
+        }
+
+        let nTar;
+        if (webCard1.indexOf(target) != -1) {
+            nTar = webCard1;
+
+        } else if (webCard2.indexOf(target) != -1) {
+            nTar = webCard2;
+
+        } else {
+            nTar = webCard3;
+        }
+
+        for (let i = 0; i < 2; i++) {
+            if (nTar.indexOf(webCard1[i]) == -1) {
+                webCard1[i].classList.remove('active');
+            }
+            if (nTar.indexOf(webCard2[i]) == -1) {
+                webCard2[i].classList.remove('active');
+            }
+            if (nTar.indexOf(webCard3[i]) == -1) {
+                webCard3[i].classList.remove('active');
+            }
+        }
+
+        for (let i = 0; i < 3; i++) {
+            if (site1[i].classList.contains('active')) {
+                site1[i].classList.remove('active');
+            };
+            if (site2[i].classList.contains('active')) {
+                site2[i].classList.remove('active');
+            };
+            if (site3[i].classList.contains('active')) {
+                site3[i].classList.remove('active');
+            };
+        }
+
+        switch (nTar) {
+            case webCard1:
+                site1.forEach(element => {
+                    if (!element.classList.contains('active')) {
+                        element.classList.add('active');
+                    };
+                    webLink.href = 'https://websmail.github.io/Money-Rain/';
+                });
+                break;
+            
+            case webCard2:
+                site2.forEach(element => {
+                    if (!element.classList.contains('active')) {
+                        element.classList.add('active');
+                    };
+                });
+                webLink.href = '#';
+                break;
+
+            case webCard3:
+                site3.forEach(element => {
+                    if (!element.classList.contains('active')) {
+                        element.classList.add('active');
+                    };
+                });
+                webLink.href = '#';
+                break;
+        
+            default:
+                break;
+        }
+
+        nTar.forEach (e => {
+            e.classList.add('active')
+        })
+    }
+})

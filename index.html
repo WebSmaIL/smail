@@ -314,46 +314,47 @@
         <div class="portfolio__flex">
           <div class="portfolio__cards">
 
-            <a href="#" class="portfolio__card">
-              <img src="./images/portfolioImages/img1.jpg" alt="">
+            <a id="pfCard1" href="#portfolioView" class="portfolio__card">
+              <img id="pfCardImg1" src="./images/portfolioImages/img1.jpg" alt="">
             </a>
 
-            <a href="#" class="portfolio__card">
-              <img src="./images/portfolioImages/img2.jpg" alt="">
+            <a id="pfCard2" href="#portfolioView" class="portfolio__card">
+              <img id="pfCardImg2" src="./images/portfolioImages/img2.jpg" alt="">
             </a>
 
-            <a href="#" class="portfolio__card">
-              <img src="./images/portfolioImages/img3.jpg" alt="">
+            <a id="pfCard3" href="#portfolioView" class="portfolio__card">
+              <img id="pfCardImg3" src="./images/portfolioImages/img3.jpg" alt="">
             </a>
 
-            <!-- <div class="about__radioButtons">
-              <div class="about__radioBlock">
-                <input
-                  class="about__radio"
-                  type="radio"
-                  name="about"
-                  id="info"
-                  checked
-                />
-                <label for="info"><span></span></label>
-  
-                
-              </div>
-  
-              <div class="about__radioBlock">
-                <input
-                  class="about__radio"
-                  type="radio"
-                  name="about"
-                  id="skills"
-                />
-                <label for="skills"><span></span></label>
-  
-                
-              </div>
-            </div> -->
           </div>
-          <div class="portfolio__view">
+          <div id="portfolioView" class="portfolio__view">
+            <!-- OPEN PREVIEW -->
+            <div class="portfolio__webPreview">
+
+              <img id="webImg1" class="portfolio__webImg" src="./images/portfolioImages/img1.jpg" alt="">
+
+              <img id="webImg2" class="portfolio__webImg" src="./images/portfolioImages/img2.jpg" alt="">
+
+              <img id="webImg3" class="portfolio__webImg" src="./images/portfolioImages/img3.jpg" alt="">
+
+            </div>
+            <!-- CLOSE PREVIEW -->
+            <!-- OPEN WEBINFO -->
+            <div class="portfolio__webInfo">
+
+                <h1 id="webTitle1" class="portfolio__webTitle title">Money Rain</h1>
+                <h1 id="webTitle2" class="portfolio__webTitle  title">KONSTRUKT</h1>
+                <h1 id="webTitle3" class="portfolio__webTitle title">GoTrieop</h1>
+
+                <p id="webText1" class="portfolio__webText text">Описание сайта 1 Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                <p id="webText2" class="portfolio__webText text">Описание сайта 1 Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                <p id="webText3" class="portfolio__webText text">Описание сайта 1 Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+
+              
+
+              <a id="webLink" href="#" class="portfolio__webLink btn">Ссылка</a>
+            </div>
+            <!-- CLOSE WEBINFO -->
           </div>
         </div>
       </div>
