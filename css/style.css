@@ -79,7 +79,7 @@ body {
 }
 @media (max-width: 767px) {
   .title {
-    font-size: 34px;
+    font-size: 24px;
   }
 }
 
@@ -93,7 +93,7 @@ body {
 }
 @media (max-width: 767px) {
   .subtitle {
-    font-size: 24px;
+    font-size: 16px;
   }
 }
 
@@ -107,7 +107,7 @@ body {
 }
 @media (max-width: 767px) {
   .text {
-    font-size: 18px;
+    font-size: 14px;
   }
 }
 
@@ -125,7 +125,7 @@ body {
 }
 @media (max-width: 767px) {
   .btn {
-    font-size: 18px;
+    font-size: 16px;
   }
 }
 
@@ -564,11 +564,6 @@ body {
   text-align: center;
   color: #000;
 }
-@media screen and (max-width: 767px) {
-  .about__title {
-    font-size: 24px;
-  }
-}
 .about__text {
   display: inline-block;
   width: 100%;
@@ -579,11 +574,6 @@ body {
   background: #000;
   color: #fff;
   opacity: 0;
-}
-@media screen and (max-width: 767px) {
-  .about__text {
-    font-size: 16px;
-  }
 }
 .about__textBlock.active > p {
   -webkit-animation: cardTextAnim 2s ease 0.5s forwards;
@@ -1092,15 +1082,91 @@ body {
   display: block;
   width: 100%;
   min-height: 100vh;
-  padding: 100px 50px;
+  padding: 100px 50px 50px 50px;
   background: #fff;
+}
+.contact > .container {
+  -webkit-perspective: 2500px;
+          perspective: 2500px;
+}
+@media screen and (max-width: 767px) {
+  .contact {
+    padding: 50px 30px;
+  }
 }
 .contact__wrapper {
   display: block;
-  max-width: 100%;
-  max-height: 700px;
-  margin: 0 auto;
+  width: 100%;
+  margin: 0 auto 40px auto;
   position: relative;
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+  -webkit-transform: rotateY(180deg);
+          transform: rotateY(180deg);
+}
+.contact__wrapper.flip {
+  -webkit-animation: wrapperFlip 1s ease forwards;
+          animation: wrapperFlip 1s ease forwards;
+}
+.contact__wrapper.unFlip {
+  -webkit-animation: wrapperUnFlip 1s ease forwards;
+          animation: wrapperUnFlip 1s ease forwards;
+}
+@-webkit-keyframes wrapperFlip {
+  0% {
+    -webkit-transform: rotateY(0);
+            transform: rotateY(0);
+  }
+  25% {
+    -webkit-transform: rotateY(-40deg);
+            transform: rotateY(-40deg);
+  }
+  100% {
+    -webkit-transform: rotateY(180deg);
+            transform: rotateY(180deg);
+  }
+}
+@keyframes wrapperFlip {
+  0% {
+    -webkit-transform: rotateY(0);
+            transform: rotateY(0);
+  }
+  25% {
+    -webkit-transform: rotateY(-40deg);
+            transform: rotateY(-40deg);
+  }
+  100% {
+    -webkit-transform: rotateY(180deg);
+            transform: rotateY(180deg);
+  }
+}
+@-webkit-keyframes wrapperUnFlip {
+  0% {
+    -webkit-transform: rotateY(180deg);
+            transform: rotateY(180deg);
+  }
+  25% {
+    -webkit-transform: rotateY(220deg);
+            transform: rotateY(220deg);
+  }
+  100% {
+    -webkit-transform: rotateY(0deg);
+            transform: rotateY(0deg);
+  }
+}
+@keyframes wrapperUnFlip {
+  0% {
+    -webkit-transform: rotateY(180deg);
+            transform: rotateY(180deg);
+  }
+  25% {
+    -webkit-transform: rotateY(220deg);
+            transform: rotateY(220deg);
+  }
+  100% {
+    -webkit-transform: rotateY(0deg);
+            transform: rotateY(0deg);
+  }
 }
 .contact__front {
   display: block;
@@ -1109,15 +1175,37 @@ body {
   background: #000;
   outline: 5px solid #000;
   border: 5px solid #fff;
+  -webkit-transform: translateZ(100px);
+          transform: translateZ(100px);
+}
+@media screen and (max-width: 767px) {
+  .contact__front {
+    -webkit-transform: translateZ(50px);
+            transform: translateZ(50px);
+    padding: 10px;
+  }
+}
+@media screen and (max-width: 300px) {
+  .contact__front {
+    padding: 0;
+  }
 }
 .contact__Title {
   margin-bottom: 20px;
   text-align: center;
 }
+@media screen and (max-width: 767px) {
+  .contact__Title {
+    margin-bottom: 5px;
+  }
+  .contact__Title.frontTitle {
+    margin-bottom: 20px;
+  }
+}
 .contact__card {
   width: 100%;
   margin-bottom: 20px;
-  padding: 15px;
+  padding: 10px;
   border: 2px solid #fff;
   -webkit-transition: all 0.3s ease;
   -o-transition: all 0.3s ease;
@@ -1126,6 +1214,12 @@ body {
 .contact__card:hover {
   -webkit-box-shadow: 0 0 10px rgb(255, 255, 255);
           box-shadow: 0 0 10px rgb(255, 255, 255);
+}
+@media screen and (max-width: 767px) {
+  .contact__card {
+    padding: 0;
+    margin-bottom: 40px;
+  }
 }
 .contact__cardBlock {
   display: -webkit-box;
@@ -1141,7 +1235,7 @@ body {
       -ms-flex-align: center;
           align-items: center;
   width: 100%;
-  padding: 15px;
+  padding: 10px;
   background: #fff;
   border: 4px solid #000;
   outline: 4px solid #fff;
@@ -1153,10 +1247,10 @@ body {
   -webkit-box-shadow: inset 0 0 30px #000;
           box-shadow: inset 0 0 30px #000;
 }
-.contact__cardTitle {
-  font-size: 24px;
-  text-align: center;
-  margin-bottom: 10px;
+@media screen and (max-width: 767px) {
+  .contact__cardBlock {
+    padding: 5px;
+  }
 }
 .contact__cardText {
   font-size: 24px;
@@ -1164,6 +1258,251 @@ body {
   color: #000;
   text-decoration: underline;
 }
+@media screen and (max-width: 767px) {
+  .contact__cardText {
+    font-size: 14px;
+  }
+}
 .contact__back {
-  display: none;
+  display: block;
+  width: 100%;
+  height: 100%;
+  padding: 20px;
+  background: #000;
+  outline: 5px solid #000;
+  border: 5px solid #fff;
+  position: absolute;
+  top: 0;
+  left: 0;
+  -webkit-transform: translateZ(-100px) rotateY(180deg);
+          transform: translateZ(-100px) rotateY(180deg);
+}
+@media screen and (max-width: 767px) {
+  .contact__back {
+    -webkit-transform: translateZ(-50px) rotateY(180deg);
+            transform: translateZ(-50px) rotateY(180deg);
+  }
+}
+.contact__form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: left;
+      -ms-flex-align: left;
+          align-items: left;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+.contact__formFlex {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 50%;
+          flex: 1 1 50%;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+}
+@media screen and (max-width: 767px) {
+  .contact__formFlex {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+}
+.contact__inputBlock {
+  width: 100%;
+}
+.contact__inputBlock:first-child {
+  margin-right: 10px;
+}
+@media screen and (max-width: 767px) {
+  .contact__inputBlock:first-child {
+    margin-right: 0;
+  }
+}
+.contact__textarea, .contact__input {
+  display: block;
+  width: 100%;
+  margin-bottom: 15px;
+  padding: 5px;
+  font-family: "Source Code Pro", monospace;
+  font-size: 24px;
+}
+.contact__textarea:focus, .contact__input:focus {
+  outline: none;
+  border: none;
+}
+@media screen and (max-width: 767px) {
+  .contact__textarea, .contact__input {
+    margin-bottom: 10px;
+    font-size: 14px;
+  }
+}
+@media screen and (max-width: 300px) {
+  .contact__textarea, .contact__input {
+    margin-bottom: 5px;
+  }
+}
+.contact__input {
+  height: 50px;
+}
+@media screen and (max-width: 767px) {
+  .contact__input {
+    height: 30px;
+  }
+}
+.contact__textarea {
+  height: 100px;
+  resize: none;
+}
+.contact__label {
+  font-family: "Source Code Pro", monospace;
+  font-size: 24px;
+  color: #fff;
+  text-align: left;
+}
+@media screen and (max-width: 767px) {
+  .contact__label {
+    font-size: 16px;
+  }
+}
+.contact__submitBtn {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  max-width: 400px;
+  margin: 0 auto;
+  cursor: pointer;
+  border: 3px solid rgb(255, 255, 255);
+  -webkit-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+.contact__submitBtn > span {
+  margin-right: 10px;
+}
+.contact__submitBtn > svg > path {
+  -webkit-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+.contact__submitBtn:hover {
+  background: rgb(255, 255, 255);
+  color: #000;
+}
+.contact__submitBtn:hover > svg > path {
+  fill: #000;
+}
+@media screen and (max-width: 767px) {
+  .contact__submitBtn {
+    padding: 5px;
+  }
+  .contact__submitBtn > svg {
+    width: 30px;
+    height: 30px;
+  }
+}
+.contact__flipBtn {
+  display: block;
+  width: 100px;
+  height: 117px;
+  margin: 0 auto;
+  cursor: pointer;
+  background: none;
+  border: none;
+  border-radius: 50%;
+  padding: 0;
+  -webkit-transform: rotate(540deg);
+      -ms-transform: rotate(540deg);
+          transform: rotate(540deg);
+}
+.contact__flipBtn > svg {
+  width: 100%;
+  height: 100%;
+  -webkit-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+.contact__flipBtn:hover > svg {
+  -webkit-filter: drop-shadow(0 0 5px #000);
+          filter: drop-shadow(0 0 5px #000);
+  -webkit-transform: scale(1.1);
+      -ms-transform: scale(1.1);
+          transform: scale(1.1);
+}
+.contact__flipBtn.active {
+  -webkit-animation: flipActive 1s ease forwards;
+          animation: flipActive 1s ease forwards;
+}
+.contact__flipBtn.inactive {
+  -webkit-animation: flipInActive 1s ease forwards;
+          animation: flipInActive 1s ease forwards;
+}
+@-webkit-keyframes flipInActive {
+  0% {
+    -webkit-transform: rotate(540deg);
+            transform: rotate(540deg);
+  }
+  20% {
+    -webkit-transform: rotate(500deg);
+            transform: rotate(500deg);
+  }
+  100% {
+    -webkit-transform: rotate(1080deg);
+            transform: rotate(1080deg);
+  }
+}
+@keyframes flipInActive {
+  0% {
+    -webkit-transform: rotate(540deg);
+            transform: rotate(540deg);
+  }
+  20% {
+    -webkit-transform: rotate(500deg);
+            transform: rotate(500deg);
+  }
+  100% {
+    -webkit-transform: rotate(1080deg);
+            transform: rotate(1080deg);
+  }
+}
+@-webkit-keyframes flipActive {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  25% {
+    -webkit-transform: rotate(-40deg);
+            transform: rotate(-40deg);
+  }
+  100% {
+    -webkit-transform: rotate(540deg);
+            transform: rotate(540deg);
+  }
+}
+@keyframes flipActive {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  25% {
+    -webkit-transform: rotate(-40deg);
+            transform: rotate(-40deg);
+  }
+  100% {
+    -webkit-transform: rotate(540deg);
+            transform: rotate(540deg);
+  }
 }

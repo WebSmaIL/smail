@@ -24,21 +24,21 @@ body {
     @include font('Montserrat', sans-serif, 42px, normal, 700, 1.5, #fff);
 
     @media (max-width: 767px) {
-        font-size: 34px;
+        font-size: 24px;
     }
 }
 .subtitle {
     @include font('Montserrat', sans-serif, 34px, normal, 400, 1.5, rgb(215, 215, 215));
 
     @media (max-width: 767px) {
-        font-size: 24px;
+        font-size: 16px;
     }
 }
 .text {
     @include font('Montserrat', sans-serif, 26px, normal, 400, 1.5, rgb(215, 215, 215));
     
     @media (max-width: 767px) {
-        font-size: 18px;
+        font-size: 14px;
     }
 }   
 .btn {
@@ -52,7 +52,7 @@ body {
     background: rgb(0, 0, 0);
 
     @media (max-width: 767px) {
-        font-size: 18px;
+        font-size: 16px;
     }
 }
 

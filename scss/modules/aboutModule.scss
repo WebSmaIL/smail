@@ -150,10 +150,6 @@
         margin-bottom: 20px;
         text-align: center;
         color: #000;
-
-        @media screen and (max-width: 767px) {
-            font-size: 24px;
-        }
     }
 
     &__text {
@@ -171,10 +167,6 @@
         color: #fff;
 
         opacity: 0;
-
-        @media screen and (max-width: 767px) {
-            font-size: 16px;
-        }
     }
 
     &__textBlock.active {

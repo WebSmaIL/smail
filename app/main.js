@@ -170,3 +170,16 @@ webCards.addEventListener('click', (e) => {
         })
     }
 })
+
+
+// FLIP CONTACT
+
+const contactWrapper = document.querySelector(".contact__wrapper")
+const flipBtn = document.getElementById("flipBtn")
+
+flipBtn.addEventListener("click", (e) => {
+    contactWrapper.classList.toggle("flip");
+    contactWrapper.classList.toggle("unFlip");
+    flipBtn.classList.toggle("active");
+    flipBtn.classList.toggle("inactive");
+})
