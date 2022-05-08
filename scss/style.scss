@@ -56,6 +56,11 @@ body {
     }
 }
 
+button:focus {
+    outline: none;
+    border: none;
+}
+
 // import sidebar
 @import "./modules/sidebarModule.scss";
 
