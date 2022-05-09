@@ -1,8 +1,8 @@
 // Обнуление стилей
-@import "./modules/nullstyle";
+@import "./modules/nullstyle.scss";
 
 // Добавление миксинов переменных и т.д
-@import "./modules/elements";
+@import "./modules/elements.scss";
 
 
 // Общие стили
@@ -75,3 +75,6 @@ button:focus {
 
 // import contact
 @import "./modules/contact.scss";
+
+// import footer
+@import "./modules/footerModule.scss";

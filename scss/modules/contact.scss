@@ -1,7 +1,6 @@
 .contact {
     display: block;
     width: 100%;
-    min-height: 100vh;
     padding: 100px 50px 50px 50px;
 
     background: #fff;
@@ -119,7 +118,10 @@
 
         @media screen and (max-width: 767px) {
           padding: 0;
-          margin-bottom: 40px;
+        }
+        @media screen and (max-width: 300px) {
+            border-right: none;
+            border-left: none;
         }
     }
 
@@ -140,6 +142,12 @@
 
         @media screen and (max-width: 767px) {
             padding: 5px;
+        }
+
+        @media screen and (max-width: 300px) {
+            border-right: none;
+            border-left: none;
+            outline: none;
         }
     }
 
@@ -232,7 +240,7 @@
             font-size: 14px;
         }
         @media screen and (max-width: 300px) {
-            margin-bottom: 5px;
+            margin-bottom: 10px;
         }
     }
 
@@ -245,8 +253,12 @@
     }
 
     &__textarea {
-        height: 100px;
+        height: 200px;
         resize: none;
+
+        @media screen and (max-width: 767px) {
+          height: 100px;
+        }
     }
 
     &__label {
@@ -331,6 +343,15 @@
         }
         &.inactive {
             animation: flipInActive 1s ease forwards;
+        }
+
+        @media screen and (max-width: 767px) {
+            width: 50px;
+            height: 58px;
+
+            // &>svg {
+
+            // }
         }
     }
 
