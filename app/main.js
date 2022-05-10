@@ -183,3 +183,24 @@ flipBtn.addEventListener("click", (e) => {
     flipBtn.classList.toggle("active");
     flipBtn.classList.toggle("inactive");
 })
+
+// burger
+
+const burgerBtn = document.querySelector(".sidebar__burger"),
+            nav = document.querySelector(".sidebar__nav"),
+            logo = document.querySelector(".sidebar__logo"),
+            sidebar = document.querySelector(".sidebar");
+
+burgerBtn.addEventListener("click", (e) => {
+    burgerBtn.classList.add("hidden");
+    logo.classList.add("hidden");
+    nav.classList.add("active");
+});
+
+nav.addEventListener("click", (e) => {
+    if (nav.classList.contains("active")) {
+        burgerBtn.classList.remove("hidden");
+        logo.classList.remove("hidden");
+        nav.classList.remove("active");
+    }
+});

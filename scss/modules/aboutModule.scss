@@ -5,6 +5,10 @@
     padding: 100px 30px;
 
     background: rgb(255, 255, 255);
+
+    @media (max-width: 767px) {
+        padding: 50px 30px;
+    }
     // .about__flex
 
     &__flex {
@@ -155,6 +159,7 @@
     &__text {
         display: inline-block;
         width: 100%;
+        max-height: 300px;
 
         margin-bottom: 15px;
         padding: 5px 20px;
@@ -167,6 +172,15 @@
         color: #fff;
 
         opacity: 0;
+
+        &:last-child {
+            overflow-y: scroll;
+            margin-bottom: 0;
+        }
+
+        @media (max-width: 767px) {
+            padding: 5px;
+        }
     }
 
     &__textBlock.active {

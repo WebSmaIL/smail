@@ -2,12 +2,21 @@
     display: block;
     width: 100%;
     padding: 100px 30px;
+    min-height: 100vh;
+
+    @media (max-width: 767px) {
+        padding: 50px 30px;
+    }
 
     // .portfolio__title
 
     &__title {
         text-align: center;
         margin-bottom: 50px;
+
+        @media (max-width: 767px) {
+            margin-bottom: 25px;
+        }
     }
 
     // .portfolio__flex

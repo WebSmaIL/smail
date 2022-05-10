@@ -333,7 +333,7 @@
 
         &:hover {
             &>svg {
-                filter: drop-shadow(0 0 5px #000);
+                filter: drop-shadow(0 0 5px rgba(0, 0, 0, 0.495));
                 transform: scale(1.1);
             }
         }
@@ -348,10 +348,6 @@
         @media screen and (max-width: 767px) {
             width: 50px;
             height: 58px;
-
-            // &>svg {
-
-            // }
         }
     }
 
