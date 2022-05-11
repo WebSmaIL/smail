@@ -440,30 +440,37 @@
           <div class="contact__back">
             <h1 class="contact__Title title">Связаться</h1>
 
-            <form action="" class="contact__form">
+            <script type="text/javascript">var submitted=false;</script>
+            <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;" 
+            onload="if(submitted){
+              //Что выполняется при отправке формы
+              alert('Отправлено');
+            }"></iframe>
+            <form action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSf59bQ7d9zxySmMpUCAK8-FVL_P6s2jsXBhtxzKpRLzWXIppg/formResponse" method="post" class="contact__form" target="hidden_iframe" onsubmit="submitted=true;">
 
               <div class="contact__formFlex">
                 <div class="contact__inputBlock">
-                  <label class="contact__label" for="name">Ваше имя</label>
-                  <input name="name" type="text" class="contact__input" placeholder="Ivan">
+                  <label class="contact__label">Ваше имя</label>
+                  <input name="entry.1144487557" type="text" class="contact__input" placeholder="Name">
                 </div>
 
                 <div class="contact__inputBlock">
-                  <label class="contact__label" for="email">Ваш email</label>
-                  <input name="email" type="email" class="contact__input" placeholder="example@gmail.com">
+                  <label class="contact__label">Ваш email</label>
+                  <input name="entry.1850259100" type="email" class="contact__input" placeholder="example@gmail.com">
                 </div>
               </div>
 
-              <label class="contact__label" for="text">Ваше сообщение</label>
-              <textarea class="contact__textarea" name="text" id="" placeholder="Message"></textarea>
+              <label class="contact__label">Ваше сообщение</label>
+              <textarea class="contact__textarea" name="entry.1231824532" id="" placeholder="Message"></textarea>
 
-              <button class="contact__submitBtn btn">
+              <button type="submit" class="contact__submitBtn btn">
                 <span>Отправить</span>
                 <svg width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path d="M25 0C11.1928 0 0 11.1928 0 25C0 38.8072 11.1928 50 25 50C38.8072 50 50 38.8072 50 25C50 11.1928 38.8072 0 25 0ZM15.4835 38.7291L20.8734 25.0079L15.4835 11.1867L37.547 24.8855L15.4835 38.7291Z" fill="white"/>
                 </svg>
               </button>
             </form>
+
           </div>
         </div>
         <!-- CLOSE CONTACT WRAPPER -->
