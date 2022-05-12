@@ -195,6 +195,8 @@
         display: flex;
         align-items: left;
         flex-direction: column;
+
+        position: relative;
     }
 
     &__formFlex {
@@ -349,6 +351,94 @@
             width: 50px;
             height: 58px;
         }
+    }
+
+    &__backBG {
+        display: none;
+        align-items: center;
+        justify-content:center;
+        flex-direction: column;
+        width: 100%;
+        height: 100%;
+
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 10;
+
+        background: rgba(0, 0, 0, 0.8);
+
+        perspective: 500;
+
+        &.active {
+            display: flex;
+        }
+
+        &>code {
+            font-size: 24px;
+            color: #fff;
+        }
+    }
+
+    &__sending {
+        &>span {
+            opacity: 0;
+
+            &:first-child {
+                animation: formSpanAnim .5s linear infinite alternate .5s;
+            }
+            &:nth-child(2) {
+                animation: formSpanAnim .5s linear infinite alternate .75s;
+            }
+            &:last-child {
+                animation: formSpanAnim .5s linear infinite alternate 1s;
+            }
+        }
+        &.hidden {
+            display: none;
+        }
+    }
+
+    @keyframes formSpanAnim {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+
+    &__sucsefull {
+        display: none;
+        margin-bottom: 20px;
+
+        &.active {
+            display: block;
+        }
+    }
+    &__error {
+        display: none;
+
+        &.active {
+            display: block;
+        }
+    }
+    &__sucsefullSVG {
+        display: none;
+        
+        &.active {
+            display: block;
+            animation: formSvgAnim 1s ease forwards; 
+        }
+    }
+
+    @keyframes formSvgAnim {
+      from {
+        transform: rotateY(-720deg);
+      }
+      to {
+        transform: rotate(0);
+      }
     }
 
     @keyframes flipInActive {

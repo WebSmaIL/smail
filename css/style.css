@@ -1117,8 +1117,6 @@ button:focus {
 .portfolio__webTitle {
   display: none;
   width: 100%;
-  min-height: 100%;
-  min-height: 100px;
   margin-bottom: 5px;
   padding: 10px;
   color: rgb(255, 255, 255);
@@ -1129,6 +1127,11 @@ button:focus {
 }
 .portfolio__webTitle.active {
   display: block;
+}
+@media screen and (max-width: 767px) {
+  .portfolio__webTitle {
+    font-size: 20px;
+  }
 }
 .portfolio__webText {
   display: none;
@@ -1393,6 +1396,7 @@ button:focus {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  position: relative;
 }
 .contact__formFlex {
   display: -webkit-box;
@@ -1558,6 +1562,112 @@ button:focus {
   .contact__flipBtn {
     width: 50px;
     height: 58px;
+  }
+}
+.contact__backBG {
+  display: none;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  background: rgba(0, 0, 0, 0.8);
+  -webkit-perspective: 500;
+          perspective: 500;
+}
+.contact__backBG.active {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+.contact__backBG > code {
+  font-size: 24px;
+  color: #fff;
+}
+.contact__sending > span {
+  opacity: 0;
+}
+.contact__sending > span:first-child {
+  -webkit-animation: formSpanAnim 0.5s linear infinite alternate 0.5s;
+          animation: formSpanAnim 0.5s linear infinite alternate 0.5s;
+}
+.contact__sending > span:nth-child(2) {
+  -webkit-animation: formSpanAnim 0.5s linear infinite alternate 0.75s;
+          animation: formSpanAnim 0.5s linear infinite alternate 0.75s;
+}
+.contact__sending > span:last-child {
+  -webkit-animation: formSpanAnim 0.5s linear infinite alternate 1s;
+          animation: formSpanAnim 0.5s linear infinite alternate 1s;
+}
+.contact__sending.hidden {
+  display: none;
+}
+@-webkit-keyframes formSpanAnim {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes formSpanAnim {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+.contact__sucsefull {
+  display: none;
+  margin-bottom: 20px;
+}
+.contact__sucsefull.active {
+  display: block;
+}
+.contact__error {
+  display: none;
+}
+.contact__error.active {
+  display: block;
+}
+.contact__sucsefullSVG {
+  display: none;
+}
+.contact__sucsefullSVG.active {
+  display: block;
+  -webkit-animation: formSvgAnim 1s ease forwards;
+          animation: formSvgAnim 1s ease forwards;
+}
+@-webkit-keyframes formSvgAnim {
+  from {
+    -webkit-transform: rotateY(-720deg);
+            transform: rotateY(-720deg);
+  }
+  to {
+    -webkit-transform: rotate(0);
+            transform: rotate(0);
+  }
+}
+@keyframes formSvgAnim {
+  from {
+    -webkit-transform: rotateY(-720deg);
+            transform: rotateY(-720deg);
+  }
+  to {
+    -webkit-transform: rotate(0);
+            transform: rotate(0);
   }
 }
 @-webkit-keyframes flipInActive {

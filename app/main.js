@@ -174,8 +174,8 @@ webCards.addEventListener('click', (e) => {
 
 // FLIP CONTACT
 
-const contactWrapper = document.querySelector(".contact__wrapper")
-const flipBtn = document.getElementById("flipBtn")
+const contactWrapper = document.querySelector(".contact__wrapper"), 
+flipBtn = document.getElementById("flipBtn");
 
 flipBtn.addEventListener("click", (e) => {
     contactWrapper.classList.toggle("flip");
@@ -204,3 +204,32 @@ nav.addEventListener("click", (e) => {
         nav.classList.remove("active");
     }
 });
+
+
+
+// intersection observer function
+
+const options = { threshold: 0.5 };
+
+const sections = document.querySelectorAll('section'); 
+let i = 0;
+const links = document.querySelectorAll(".sidebar__link");
+
+let observer = new IntersectionObserver ((entries, observer) => {
+    entries.forEach(entry => {
+        const obj = entry.target;
+        const a = document.querySelector(`a[href='#${obj.id}']`)
+        
+        if(entry.isIntersecting) {            
+            links.forEach((e=> {
+                if (e != a) {
+                   e.classList.remove('active');
+                } else {e.classList.add('active');};
+            }))
+        }
+    })
+}, options);
+
+sections.forEach ((e) => {
+    observer.observe(e)
+})

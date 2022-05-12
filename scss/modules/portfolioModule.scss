@@ -139,8 +139,6 @@
     &__webTitle {
         display: none;
         width: 100%;
-        min-height: 100%;
-        min-height: 100px;
         margin-bottom: 5px;
         padding: 10px;
 
@@ -152,6 +150,10 @@
 
         &.active {
             display: block;
+        }
+
+        @media screen and (max-width: 767px) {
+          font-size: 20px;
         }
     }
 
