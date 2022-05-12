@@ -133,6 +133,14 @@
         &>p {
             @include font('Montserrat', sans-serif, 12px, normal, 400, 1.5, rgb(255, 255, 255));
         }
+        &>svg {
+            transition: all .3s ease;
+        }
+        &:hover {
+            &>svg {
+                transform: scale(1.1);
+            }
+        }
 
         &::after {
             content: "";
@@ -150,6 +158,11 @@
 
         &.active::after {
             width: 100%;
+        }
+        &.active {
+            &>svg {
+                transform: scale(1.1);
+            }
         }
     }
 }

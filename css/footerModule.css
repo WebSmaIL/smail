@@ -31,6 +31,17 @@
 }
 .footer__link {
   margin-left: 10px;
+  -webkit-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  border-radius: 50%;
+}
+.footer__link:hover {
+  -webkit-transform: scale(1.1);
+      -ms-transform: scale(1.1);
+          transform: scale(1.1);
+  -webkit-box-shadow: 0 -10px 10px rgba(255, 255, 255, 0.503);
+          box-shadow: 0 -10px 10px rgba(255, 255, 255, 0.503);
 }
 .footer__link:first-child {
   margin-left: 0;

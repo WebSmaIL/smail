@@ -93,7 +93,6 @@ webCards.addEventListener('click', (e) => {
     let target = e.target;
 
     if ((target.tagName == 'IMG' || target.tagName == 'A') && !target.classList.contains('active')) {
-        console.log('da');
         if(!pfView.classList.contains('active')) {
             pfView.classList.add('active');
         }
@@ -149,7 +148,7 @@ webCards.addEventListener('click', (e) => {
                         element.classList.add('active');
                     };
                 });
-                webLink.href = '#';
+                webLink.href = 'https://websmail.github.io/konstruct.github.io/';
                 break;
 
             case webCard3:
@@ -158,7 +157,7 @@ webCards.addEventListener('click', (e) => {
                         element.classList.add('active');
                     };
                 });
-                webLink.href = '#';
+                webLink.href = 'https://websmail.github.io/gotrieop/';
                 break;
         
             default:
@@ -195,6 +194,12 @@ burgerBtn.addEventListener("click", (e) => {
     burgerBtn.classList.add("hidden");
     logo.classList.add("hidden");
     nav.classList.add("active");
+
+    setTimeout(() => {
+        burgerBtn.classList.remove("hidden");
+        logo.classList.remove("hidden");
+        nav.classList.remove("active");
+    }, 5000)
 });
 
 nav.addEventListener("click", (e) => {
@@ -209,7 +214,7 @@ nav.addEventListener("click", (e) => {
 
 // intersection observer function
 
-const options = { threshold: 0.5 };
+const options = { threshold: 0.4 };
 
 const sections = document.querySelectorAll('section'); 
 let i = 0;

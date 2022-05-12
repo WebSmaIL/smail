@@ -280,6 +280,16 @@ button:focus {
   line-height: 1.5;
   color: rgb(255, 255, 255);
 }
+.sidebar__link > svg {
+  -webkit-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+.sidebar__link:hover > svg {
+  -webkit-transform: scale(1.1);
+      -ms-transform: scale(1.1);
+          transform: scale(1.1);
+}
 .sidebar__link::after {
   content: "";
   width: 0;
@@ -294,6 +304,11 @@ button:focus {
 }
 .sidebar__link.active::after {
   width: 100%;
+}
+.sidebar__link.active > svg {
+  -webkit-transform: scale(1.1);
+      -ms-transform: scale(1.1);
+          transform: scale(1.1);
 }
 
 .main {
@@ -1339,8 +1354,8 @@ button:focus {
   transition: all 0.3s ease;
 }
 .contact__cardBlock:hover {
-  -webkit-box-shadow: inset 0 0 30px #000;
-          box-shadow: inset 0 0 30px #000;
+  -webkit-box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.568);
+          box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.568);
 }
 @media screen and (max-width: 767px) {
   .contact__cardBlock {
@@ -1760,6 +1775,17 @@ button:focus {
 }
 .footer__link {
   margin-left: 10px;
+  -webkit-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  border-radius: 50%;
+}
+.footer__link:hover {
+  -webkit-transform: scale(1.1);
+      -ms-transform: scale(1.1);
+          transform: scale(1.1);
+  -webkit-box-shadow: 0 -10px 10px rgba(255, 255, 255, 0.503);
+          box-shadow: 0 -10px 10px rgba(255, 255, 255, 0.503);
 }
 .footer__link:first-child {
   margin-left: 0;
