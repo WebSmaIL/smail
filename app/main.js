@@ -1,16 +1,14 @@
-// Радио кнопки
+// radio btns
 const radioBTNS = document.querySelectorAll('.about__radio');
 
-// Массив с анимированными блоками информации
+// array with animate info-blocks
 const informationArr = [document.querySelector('.about__information'),
                         document.querySelector('.about__textBlock')];
 
-// Массив с анимированными блоками навыков
+// array with animate skills-blocks
 const skillsArr = [document.querySelector('.about__mySkills'),
                     document.querySelectorAll('.about__cardLogo'),
                     document.querySelectorAll('.about__cardLine')];
-
-
 
 if (radioBTNS[0].checked) {
 
@@ -27,7 +25,6 @@ if (radioBTNS[0].checked) {
     informationArr.forEach(element => {
         element.classList.add('active');
     });
-
 }
 
 radioBTNS.forEach(element => {
@@ -74,20 +71,19 @@ radioBTNS.forEach(element => {
 });
 
 
-     // ================== \\
-    //  Портфолио карточки  \\
-//  \\  ==================  //
+// PORTFOLIO CARDS
 
-const webCards = document.querySelector('.portfolio__cards');
-const pfView = document.querySelector('.portfolio__view');
+const webCards = document.querySelector('.portfolio__cards'), 
+    pfView = document.querySelector('.portfolio__view');
 
-const webCard1 = [pfCard1, pfCardImg1];
-const webCard2 = [pfCard2, pfCardImg2];
-const webCard3 = [pfCard3, pfCardImg3];
+const webCard1 = [pfCard1, pfCardImg1],
+    webCard2 = [pfCard2, pfCardImg2], 
+    webCard3 = [pfCard3, pfCardImg3];
 
-const site1 = [webImg1, webTitle1, webText1];
-const site2 = [webImg2, webTitle2, webText2];
-const site3 = [webImg3, webTitle3, webText3];
+const 
+    site1 = [webImg1, webTitle1, webText1],
+    site2 = [webImg2, webTitle2, webText2],
+    site3 = [webImg3, webTitle3, webText3];
 
 webCards.addEventListener('click', (e) => {
     let target = e.target;
@@ -170,8 +166,7 @@ webCards.addEventListener('click', (e) => {
     }
 })
 
-
-// FLIP CONTACT
+// FLIP BTN CONTACT
 
 const contactWrapper = document.querySelector(".contact__wrapper"), 
 flipBtn = document.getElementById("flipBtn");
@@ -183,12 +178,12 @@ flipBtn.addEventListener("click", (e) => {
     flipBtn.classList.toggle("inactive");
 })
 
-// burger
+// BURGER BTN
 
 const burgerBtn = document.querySelector(".sidebar__burger"),
-            nav = document.querySelector(".sidebar__nav"),
-            logo = document.querySelector(".sidebar__logo"),
-            sidebar = document.querySelector(".sidebar");
+        nav = document.querySelector(".sidebar__nav"),
+        logo = document.querySelector(".sidebar__logo"),
+        sidebar = document.querySelector(".sidebar");
 
 burgerBtn.addEventListener("click", (e) => {
     burgerBtn.classList.add("hidden");
@@ -216,14 +211,15 @@ nav.addEventListener("click", (e) => {
 
 const options = { threshold: 0.4 };
 
-const sections = document.querySelectorAll('section'); 
+const sections = document.querySelectorAll('section'), 
+    links = document.querySelectorAll(".sidebar__link");
+
 let i = 0;
-const links = document.querySelectorAll(".sidebar__link");
 
 let observer = new IntersectionObserver ((entries, observer) => {
     entries.forEach(entry => {
-        const obj = entry.target;
-        const a = document.querySelector(`a[href='#${obj.id}']`)
+        const obj = entry.target,
+        a = document.querySelector(`a[href='#${obj.id}']`);
         
         if(entry.isIntersecting) {            
             links.forEach((e=> {
