@@ -34,6 +34,24 @@ body {
   line-height: 1.5;
 }
 
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #fff #000;
+}
+*::-webkit-scrollbar {
+  height: 12px;
+  width: 12px;
+  margin: 5px;
+}
+*::-webkit-scrollbar-track {
+  background: rgb(0, 0, 0);
+}
+*::-webkit-scrollbar-thumb {
+  background-color: rgba(255, 255, 255, 1);
+  border-radius: 5px;
+  border: 3px solid rgba(0, 0, 0, 1);
+}
+
 ul[class],
 ol[class] {
   list-style: none;
